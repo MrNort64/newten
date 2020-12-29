@@ -1,8 +1,11 @@
 @ECHO off
 
+.\content\pies\version.py
+set /p version=<".\content\info\version.txt"
+
 :greeting
 set ms= null
-title Newten -=- By: Mr.North
+title Newten %version% -=- By: Mr.North
 echo [31m-[35m1[31m- [35mIP Logger
 echo [31m-[35m2[31m- [35mIP Pinger
 echo [31m-[35m3[31m- [35mLog View
