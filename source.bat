@@ -29,6 +29,7 @@ if %ms% == 6 goto clear
 if %ms% == 7 goto updater
 if %ms% == 8 exit
 if %ms% == 9 goto logDelete
+echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
 :ipLogger
@@ -39,6 +40,8 @@ if exist ".\content\logs\%log-name%.txt" goto menu
 echo [36mnewten/iplogger-$ [34mEnter the IP you are logging
 set /p log-content= [36mnewten/iplogger/content-# [34m
 echo Name: %log-name% - IP: %log-content% >>".\content\logs\%log-name%.txt"
+if not exist ".\content\logs\%log-name%.txt" echo [36mnewten/iplogger/error-$ [34mThere was an error creating your log
+if not exist ".\content\logs\%log-name%.txt" goto menu
 echo [36mnewten/iplogger/complete-$ [34mThe log %log-name% was created
 goto menu
 
@@ -54,18 +57,24 @@ goto menu
 :pinger
 echo [36mnewten/pinger-$ [34m Enter the IP you want to ping
 set /p ip= [36mnewten/pinger/ip-# [34m
+if not exist ".\content\animations\pinger.cmd" echo [36mnewten/pinger/error-$ [34mpinger.cmd is broken or missing
+if not exist ".\content\animations\pinger.cmd" goto menu
 start cmd /c ".\content\animations\pinger.cmd"
 echo [36mnewten/pinger/start-$ [34mNow pinging %ip%
 goto menu
 
 :pScan
 echo [36mnewten/pscan-$ [34mStarting pScan.exe
+if not exist ".\content\exes\pScan.exe" echo [36mnewten/pscan/error-$ [34mpScan.exe is broken or missing
+if not exist ".\content\exes\pScan.exe" goto menu
 start /d ".\content\exes" pScan.exe >nul
 echo [36mnewten/pscan-$ [34mpScan.exe was started
 goto menu
 
 :PortScanner
 echo [36mnewten/portscanner-$ [34mStarting Port-Scanner.exe
+if not exist ".\content\exes\Port-Scanner.exe" echo [36mnewten/portscanner/error-$ [34mPort-Scanner.exe is broken or missing
+if not exist ".\content\exes\Port-Scanner.exe" goto menu
 start /d ".\content\exes" Port-Scanner.exe >nul
 echo [36mnewten/portscanner-$ [34mPort-Scanner.exe was started
 goto menu
@@ -76,6 +85,8 @@ goto greeting
 
 :updater
 echo [36mnewten/updater-$ [34mStarting con-test.bat
+if not exist ".\updater\con-test.bat" echo [36mnewten/updater/error-$ [34mcon-test.bat is broken or missing
+if not exist ".\updater\con-test.bat" goto menu
 .\updater\con-test.bat
 echo [36mnewten/updater/complete-$ [34mUpdate Installed
 goto menu
