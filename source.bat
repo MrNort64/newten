@@ -15,6 +15,7 @@ echo [31m-[35m6[31m- [35mClear
 echo [31m-[35m7[31m- [35mUpdate Newten
 echo [31m-[35m8[31m- [35mExit
 echo [31m-[35m9[31m- [35mDelete Log
+echo [31m-[35m10[31m- [35mFix Updater
 echo.
 goto menu
 
@@ -29,6 +30,7 @@ if %ms% == 6 goto clear
 if %ms% == 7 goto updater
 if %ms% == 8 exit
 if %ms% == 9 goto logDelete
+if %ms% == 10 goto fixer
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -90,3 +92,21 @@ if not exist ".\updater\con-test.bat" goto menu
 .\updater\con-test.bat
 echo [36mnewten/updater/complete-$ [34mUpdate Installed
 goto menu
+
+:logDelete
+echo [36mnewten/logdelete-$ [34mEnter the log name you want to delete
+set /p dlog-name= [36mnewten/logdelete/log-# [34m
+if not exist ".\content\logs\%dlog-name%.txt" echo [36mnewten/logdelete/error-$ [34mA log with the name %dlog-name% does not exist
+if not exist ".\content\logs\%dlog-name%.txt" goto menu
+echo [36mnewten/logdelete/start-$ [34mDeleting %dlog-name%.txt
+del ".\content\logs\%dlog-name%.txt"
+echo [36mnewten/logdelete/done-$ [34mLog %dlog-name%.txt was deleted
+goto menu
+
+:fixer
+echo [36mnewten/fixer-$ [34mStarting con-test.bat
+.\fixer\con-test.bat
+echo [36mnewten/fixer/complete-$ [34mUpdater was Fixed
+goto menu
+
+
