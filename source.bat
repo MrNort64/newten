@@ -15,7 +15,7 @@ echo [31m-[35m6[31m- [35mClear
 echo [31m-[35m7[31m- [35mUpdate Newten
 echo [31m-[35m8[31m- [35mExit
 echo [31m-[35m9[31m- [35mDelete Log
-echo [31m-[35m10[31m- [35mFix Updater
+echo [31m-[35m10[31m- [35mDiscord
 echo.
 goto menu
 
@@ -30,7 +30,7 @@ if %ms% == 6 goto clear
 if %ms% == 7 goto updater
 if %ms% == 8 exit
 if %ms% == 9 goto logDelete
-if %ms% == 10 goto fixer
+if %ms% == 10 goto discord
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -103,10 +103,7 @@ del ".\content\logs\%dlog-name%.txt"
 echo [36mnewten/logdelete/done-$ [34mLog %dlog-name%.txt was deleted
 goto menu
 
-:fixer
-echo [36mnewten/fixer-$ [34mStarting con-test.bat
-.\fixer\con-test.bat
-echo [36mnewten/fixer/complete-$ [34mUpdater was Fixed
+:discord
+echo [36mnewten/discord-$ [34;4mhttps://discord.gg/FerfzjVFF3[0m
 goto menu
-
 
