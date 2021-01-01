@@ -61,7 +61,7 @@ echo [36mnewten/logview/logdata$ [34m%log-data%
 goto menu
 
 :pinger
-echo [36mnewten/pinger-$ [34m Enter the IP you want to ping
+echo [36mnewten/pinger-$ [34mEnter the IP you want to ping
 set /p ip= [36mnewten/pinger/ip-# [34m
 if not exist ".\content\animations\pinger.cmd" echo [36mnewten/pinger/error-$ [34mpinger.cmd is broken or missing
 if not exist ".\content\animations\pinger.cmd" goto menu
