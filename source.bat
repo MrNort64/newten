@@ -4,7 +4,7 @@
 set /p version=<".\content\info\version.txt"
 
 :greeting
-set ms= null
+set /a ms= null
 title Newten %version% -=- By: Mr.North
 echo [31m-[35m1[31m- [35mIP Logger
 echo [31m-[35m2[31m- [35mIP Pinger
@@ -16,6 +16,7 @@ echo [31m-[35m7[31m- [35mUpdate Newten
 echo [31m-[35m8[31m- [35mExit
 echo [31m-[35m9[31m- [35mDelete Log
 echo [31m-[35m10[31m- [35mDiscord
+echo [31m-[35m11[31m- [35mFree Stressers
 echo.
 goto menu
 
@@ -31,6 +32,7 @@ if %ms% == 7 goto updater
 if %ms% == 8 exit
 if %ms% == 9 goto logDelete
 if %ms% == 10 goto discord
+if %ms% == 11 goto freeStressers
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -107,3 +109,20 @@ goto menu
 echo [36mnewten/discord-$ [34;4mhttps://discord.gg/FerfzjVFF3[0m
 goto menu
 
+:freeStressers
+echo [36mnewten/freestressers-$ [34m
+echo [1;4;32mFREE BOOTERS[0m
+echo [32mhttps://www.stressthem.to/ - BEST[1Gbps] [300/s]
+echo https://instant-stresser.com/ - BEST[1-3Gbps] [120/s]
+echo https://freeboot.is/ BEST[1-2 Gbps] [90/s]
+echo https://thestresser.com/ - BEST[200/s]
+echo https://criticalsecurity.to/ - [5Gbps] [40/s]
+echo https://venomstress.ru/ - [60/s]
+echo https://boot4free.co/ - [1-2Gbps] [60/s]
+echo https://exitus.in/index.php/free/ - [60/s]
+echo https://xdos-s.tech/ - [1Gbps] [30/s]
+echo https://meteor-security.to/ - [1Gbps] [60/s]
+echo https://meteor-stresser.to/ - [1Gbps] [60/s]
+echo https://www.ipstresser.com/ - [200Mbps] [300/s]
+echo https://topbooter.net/ - [120/s][0m
+goto menu
