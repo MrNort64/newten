@@ -17,6 +17,7 @@ echo [31m-[35m8[31m- [35mExit
 echo [31m-[35m9[31m- [35mDelete Log
 echo [31m-[35m10[31m- [35mDiscord
 echo [31m-[35m11[31m- [35mFree Stressers
+echo [31m-[35m12[31m- [35mHack The Box Code
 echo.
 goto menu
 
@@ -33,6 +34,7 @@ if %ms% == 8 exit
 if %ms% == 9 goto logDelete
 if %ms% == 10 goto discord
 if %ms% == 11 goto freeStressers
+if %ms% == 12 goto hacktheboxcode
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -125,4 +127,22 @@ echo https://meteor-security.to/ - [1Gbps] [60/s]
 echo https://meteor-stresser.to/ - [1Gbps] [60/s]
 echo https://www.ipstresser.com/ - [200Mbps] [300/s]
 echo https://topbooter.net/ - [120/s][0m
+goto menu
+
+:hacktheboxcode
+echo [36mnewten/htbc-$ [34mCopy the base64 code: 
+curl -XPOST https://www.hackthebox.eu/api/invite/generate
+echo.
+echo [36mnewten/htbc/option-$ 34mWould you like to open a base64 decoder
+echo [31m-[35m1[31m- [35mYes
+echo [31m-[35m2[31m- [35mNo
+set /p i= [36mnewten/htbc/option-# [34m
+if %i% == 1 goto htby
+if %i% == 2 goto menu
+goto menu
+
+:htby
+echo [36mnewten/htbc/option/yes-$ [34mStarting your default browser
+start https://www.base64decode.org/
+echo [36mnewten/htbc/option/yes-$ [34mStarted
 goto menu
