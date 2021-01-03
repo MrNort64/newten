@@ -18,6 +18,7 @@ echo [31m-[35m9[31m- [35mDelete Log
 echo [31m-[35m10[31m- [35mDiscord
 echo [31m-[35m11[31m- [35mFree Stressers
 echo [31m-[35m12[31m- [35mHack The Box Code
+echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
 echo.
 goto menu
 
@@ -35,6 +36,7 @@ if %ms% == 9 goto logDelete
 if %ms% == 10 goto discord
 if %ms% == 11 goto freeStressers
 if %ms% == 12 goto hacktheboxcode
+if %ms% == 13 goto 1ping
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -146,3 +148,8 @@ echo [36mnewten/htbc/option/yes-$ [34mStarting your default browser
 start https://www.base64decode.org/
 echo [36mnewten/htbc/option/yes-$ [34mStarted
 goto menu
+
+:1ping
+set ip=1.1.1.1
+if not exist ".\content\animations\pinger.cmd" echo Pinger.cmd is missing or broken && goto menu
+start cmd /c ".\content\animations\pinger.cmd"
