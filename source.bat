@@ -2,6 +2,12 @@
 
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
+if not exist ".\content\info\update_available.vbs" echo x=msgbox("A new update is available",64,"Newten Updater")>".\content\info\update_available.vbs"
+
+:legacy
+if not exist ".\content\info\legacy_version.txt" echo %version%>.\content\info\legacy_version.txt
+set /p legacy_version=<".\content\info\legacy_version.txt"
+if not %version% == %legacy_version% WScript ".\content\info\update_available.vbs"
 
 :greeting
 set /a ms= null
