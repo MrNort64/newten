@@ -1,4 +1,4 @@
 
-- Author got a new username
-- Ability to get a direct link to Newten's source code
-- Fixed some uncaught typing mistakes
+- New update checker
+- Opening Newten on a legacy version will notify you that the program needs to be updated
+- New file added legacy_version.txt
