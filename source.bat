@@ -12,6 +12,7 @@ if not %version% == %legacy_version% WScript ".\content\info\update_available.vb
 :greeting
 set /a ms= null
 title Newten %version% -=- By: Carbon
+cls
 echo [31m-[35m1[31m- [35mIP Logger
 echo [31m-[35m2[31m- [35mIP Pinger
 echo [31m-[35m3[31m- [35mLog View
