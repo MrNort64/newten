@@ -108,7 +108,7 @@ echo [36mnewten/updater-$ [34mStarting con-test.bat
 if not exist ".\updater\con-test.bat" echo [36mnewten/updater/error-$ [34mcon-test.bat is broken or missing
 if not exist ".\updater\con-test.bat" goto menu
 .\content\pies\version.py
-set /p nVersion=<".\content\info\version/txt"
+set /p nVersion=<".\content\info\version.txt"
 echo %nVersion%>".\content\info\legacy_version.txt"
 .\updater\con-test.bat
 echo [36mnewten/updater/complete-$ [34mUpdate Installed
