@@ -1,3 +1,4 @@
 
-- Patch Notes Update
-- Yea thats it
+- Author got a new username
+- Ability to get a direct link to Newten's source code
+- Fixed some uncaught typing mistakes
