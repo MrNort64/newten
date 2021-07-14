@@ -5,7 +5,7 @@ set /p version=<".\content\info\version.txt"
 
 :greeting
 set /a ms= null
-title Newten %version% -=- By: Mr.North
+title Newten %version% -=- By: Carbon
 echo [31m-[35m1[31m- [35mIP Logger
 echo [31m-[35m2[31m- [35mIP Pinger
 echo [31m-[35m3[31m- [35mLog View
@@ -19,6 +19,7 @@ echo [31m-[35m10[31m- [35mDiscord
 echo [31m-[35m11[31m- [35mFree Stressers
 echo [31m-[35m12[31m- [35mHack The Box Code
 echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
+echo [31m-[35m14[31m- [35mPatch Notes
 echo.
 goto menu
 
@@ -37,6 +38,7 @@ if %ms% == 10 goto discord
 if %ms% == 11 goto freeStressers
 if %ms% == 12 goto hacktheboxcode
 if %ms% == 13 goto 1ping
+if %ms% == 14 goto patchNotes
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -153,3 +155,13 @@ goto menu
 set ip=1.1.1.1
 if not exist ".\content\animations\pinger.cmd" echo Pinger.cmd is missing or broken && goto menu
 start cmd /c ".\content\animations\pinger.cmd"
+
+:patchNotes
+echo [36mnewten/menu/patch_notes-# [34m
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/patch_notes-# [91m Patch Notes Unavailable
+if errorlevel == 1 goto menu
+curl https://raw.githubusercontent.com/MrNort64/newten/main/pn.txt
+echo.
+goto menu
+
