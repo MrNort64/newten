@@ -20,6 +20,8 @@ echo [31m-[35m11[31m- [35mFree Stressers
 echo [31m-[35m12[31m- [35mHack The Box Code
 echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
 echo [31m-[35m14[31m- [35mPatch Notes
+echo [31m-[35m15[31m- [35mSource Code
+echo [31m-[35m16[31m- [35mOpen Source Code
 echo.
 goto menu
 
@@ -39,6 +41,8 @@ if %ms% == 11 goto freeStressers
 if %ms% == 12 goto hacktheboxcode
 if %ms% == 13 goto 1ping
 if %ms% == 14 goto patchNotes
+if %ms% == 15 goto sourceCode
+if %ms% == 16 goto osc
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -159,9 +163,18 @@ start cmd /c ".\content\animations\pinger.cmd"
 :patchNotes
 echo [36mnewten/menu/patch_notes-# [34m
 ping -n 1 www.google.com >nul
-if errorlevel == 1 echo [36mnewten/menu/patch_notes-# [91m Patch Notes Unavailable
+if errorlevel == 1 echo [36mnewten/menu/patch_notes-# [91mPatch Notes Unavailable
 if errorlevel == 1 goto menu
 curl https://raw.githubusercontent.com/MrNort64/newten/main/pn.txt
 echo.
 goto menu
 
+:sourceCode
+echo [36mnewten/menu/sourceCode-# [34m[4mhttps://github.com/MrNort64/newten[0m
+goto menu
+
+:osc
+echo [36mnewten/menu/sourceCode-# [34mStarting your default browser
+start https://github.com/MrNort64/newten
+if errorlevel == 1 echo [36mnewten/menu/sourceCode-# [91mError opening source code
+goto menu
