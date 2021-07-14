@@ -126,7 +126,7 @@ echo [36mnewten/logdelete/done-$ [34mLog %dlog-name%.txt was deleted
 goto menu
 
 :discord
-echo [36mnewten/discord-$ [34;4mhttps://discord.gg/FerfzjVFF3[0m
+echo [36mnewten/discord-$ [34;4mhttps://discord.gg/HX2sbyXGuj[0m
 goto menu
 
 :freeStressers
