@@ -1,5 +1,9 @@
 @ECHO off
 
+title Verifying MultiCloud
+echo [32m-} Powered By MultiCloud {-
+timeout /t 2 >nul
+
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
 if not exist ".\content\info\update_available.vbs" echo x=msgbox("A new update is available",64,"Newten Updater")>".\content\info\update_available.vbs"
