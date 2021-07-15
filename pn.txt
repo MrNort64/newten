@@ -1,10 +1,4 @@
 
--> Version 5.2
+-> Version 5.4
 
-- New update checker
-- Opening Newten on a legacy version will notify you that the program needs to be updated
-- New file added legacy_version.txt
-
--> Version 5.3
-
-- New Discord Link
+Fixed bug where using 1.1.1.1 pinger would trigger the following method
