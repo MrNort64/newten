@@ -169,6 +169,7 @@ goto menu
 set ip=1.1.1.1
 if not exist ".\content\animations\pinger.cmd" echo Pinger.cmd is missing or broken && goto menu
 start cmd /c ".\content\animations\pinger.cmd"
+goto menu
 
 :patchNotes
 echo [36mnewten/menu/patch_notes-# [34m
