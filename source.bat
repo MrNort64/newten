@@ -211,7 +211,7 @@ if errorlevel == 1 echo [36mnewten/menu/sourceCode-# [91mError opening source 
 goto menu
 
 :eb64
-set /p data=[36mnewten/menu/eb64/input-# [34m 
+set /p data=[36mnewten/menu/eb64/input-# [34m
 echo %data%>".\content\temp\eb64-tmpf.txt"
 .\content\pies\encode-b64.py
 del ".\content\temp\eb64-tmpf.txt"
