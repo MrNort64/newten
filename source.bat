@@ -178,13 +178,7 @@ echo https://topbooter.net/ - [120/s][0m
 goto menu
 
 :hacktheboxcode
-echo [36mnewten/htbc-$ [34mNewten has no valid method to hack the box new method will be worked on
-goto menu
-
-:htby
-echo [36mnewten/htbc/option/yes-$ [34mStarting your default browser
-start https://www.base64decode.org/
-echo [36mnewten/htbc/option/yes-$ [34mStarted
+echo [36mnewten/htbc-$ [34mHack the box no longer requires you to hack yourself in
 goto menu
 
 :1ping
