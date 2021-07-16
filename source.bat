@@ -55,6 +55,7 @@ echo [31m-[35m15[31m- [35mSource Code
 echo [31m-[35m16[31m- [35mOpen Source Code
 echo [31m-[35m17[31m- [35mEncode to Base64
 echo [31m-[35m18[31m- [35mDecode from Base64
+echo [31m-[35m19[31m- [35mFAQ
 echo.
 goto menu
 
@@ -78,6 +79,7 @@ if %ms% == 15 goto sourceCode
 if %ms% == 16 goto osc
 if %ms% == 17 goto eb64
 if %ms% == 18 goto db64
+if %ms% == 19 goto faq
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -223,4 +225,14 @@ set /p data=[36mnewten/menu/db64/input-# [34m
 echo %data%>".\content\temp\db64-tmpf.txt"
 .\content\pies\decode-b64.py
 echo [36mnewten/menu/eb64/input-$ [34mYour data was decoded
+goto menu
+
+:faq
+echo [36mnewten/menu/faq-# [34m
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/patch_notes-# [91mFAQ Unavailable
+if errorlevel == 1 goto menu
+echo.
+curl https://raw.githubusercontent.com/MrNort64/newten/main/faq.txt
+echo.
 goto menu
