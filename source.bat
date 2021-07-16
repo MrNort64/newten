@@ -1,5 +1,25 @@
 @ECHO off
 
+if not exist ".\content\temp" mkdir ".\content\temp"
+
+echo import base64>".\content\pies\encode-b64.py"
+echo import os>>".\content\pies\encode-b64.py"
+echo f = open("./content/temp/eb64-tmpf.txt", "r")>>".\content\pies\encode-b64.py"
+echo data = f.read()>>".\content\pies\encode-b64.py"
+echo encoding = base64.b64encode(data.encode("utf-8"))>>".\content\pies\encode-b64.py"
+echo encoded = str(encoding, "utf-8")>>".\content\pies\encode-b64.py"
+echo os.system("echo [36mnewten/menu/eb64/encoded-$ [92m" + encoded)>>".\content\pies\encode-b64.py"
+
+echo import os>".\content\pies\decode-b64.py"
+echo import base64>>".\content\pies\decode-b64.py"
+echo try:>>".\content\pies\decode-b64.py"
+echo     f = open("./content/temp/db64-tmpf.txt", "r")>>".\content\pies\decode-b64.py"
+echo     data = f.read()   >>".\content\pies\decode-b64.py"
+echo     fdata = base64.b64decode(data).decode('utf-8')>>".\content\pies\decode-b64.py"
+echo     os.system("echo [36mnewten/menu/eb64/encoded-$ [92m" + fdata)>>".\content\pies\decode-b64.py"
+echo except:>>".\content\pies\decode-b64.py"
+echo     os.system("echo [36mnewten/menu/eb64/encoded-$ [91mUnable to decode data")>>".\content\pies\decode-b64.py"
+
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 timeout /t 2 >nul
@@ -33,6 +53,8 @@ echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
 echo [31m-[35m14[31m- [35mPatch Notes
 echo [31m-[35m15[31m- [35mSource Code
 echo [31m-[35m16[31m- [35mOpen Source Code
+echo [31m-[35m17[31m- [35mEncode to Base64
+echo [31m-[35m18[31m- [35mDecode from Base64
 echo.
 goto menu
 
@@ -54,6 +76,8 @@ if %ms% == 13 goto 1ping
 if %ms% == 14 goto patchNotes
 if %ms% == 15 goto sourceCode
 if %ms% == 16 goto osc
+if %ms% == 17 goto eb64
+if %ms% == 18 goto db64
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -152,15 +176,7 @@ echo https://topbooter.net/ - [120/s][0m
 goto menu
 
 :hacktheboxcode
-echo [36mnewten/htbc-$ [34mCopy the base64 code: 
-curl -XPOST https://www.hackthebox.eu/api/invite/generate
-echo.
-echo [36mnewten/htbc/option-$ 34mWould you like to open a base64 decoder
-echo [31m-[35m1[31m- [35mYes
-echo [31m-[35m2[31m- [35mNo
-set /p i= [36mnewten/htbc/option-# [34m
-if %i% == 1 goto htby
-if %i% == 2 goto menu
+echo [36mnewten/htbc-$ [34mNewten has no valid method to hack the box new method will be worked on
 goto menu
 
 :htby
@@ -185,11 +201,26 @@ echo.
 goto menu
 
 :sourceCode
-echo [36mnewten/menu/sourceCode-# [34m[4mhttps://github.com/MrNort64/newten[0m
+echo [36mnewten/menu/sourceCode-$ [34m[4mhttps://github.com/MrNort64/newten[0m
 goto menu
 
 :osc
-echo [36mnewten/menu/sourceCode-# [34mStarting your default browser
+echo [36mnewten/menu/sourceCode-$ [34mStarting your default browser
 start https://github.com/MrNort64/newten
 if errorlevel == 1 echo [36mnewten/menu/sourceCode-# [91mError opening source code
+goto menu
+
+:eb64
+set /p data=[36mnewten/menu/eb64/input-# [34m 
+echo %data%>".\content\temp\eb64-tmpf.txt"
+.\content\pies\encode-b64.py
+del ".\content\temp\eb64-tmpf.txt"
+echo [36mnewten/menu/eb64-$ [34mYour data was encoded
+goto menu
+
+:db64
+set /p data=[36mnewten/menu/db64/input-# [34m
+echo %data%>".\content\temp\db64-tmpf.txt"
+.\content\pies\decode-b64.py
+echo [36mnewten/menu/eb64/input-$ [34mYour data was decoded
 goto menu
