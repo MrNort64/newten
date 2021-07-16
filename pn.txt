@@ -8,3 +8,7 @@
 -> Version 6.1 FAQ Update
 
 - New menu selection providing you with faq
+
+-> Version 6.2
+
+- It has been found that hack the box no longer requires you to hack for a code to join the site
