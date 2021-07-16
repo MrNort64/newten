@@ -1,4 +1,7 @@
 
--> Version 5.4
+-> Version 5.6 Base64 Update
 
-Fixed bug where using 1.1.1.1 pinger would trigger the following method
+- Newten now has the ability to encode and decode Base64 
+- New temp folder added to host containment for files used to hold transfer variables
+- Hack the box code was outdated and needs a new method which will be worked on and finished by the end of next week
+
