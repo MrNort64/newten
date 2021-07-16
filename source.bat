@@ -16,9 +16,9 @@ echo try:>>".\content\pies\decode-b64.py"
 echo     f = open("./content/temp/db64-tmpf.txt", "r")>>".\content\pies\decode-b64.py"
 echo     data = f.read()   >>".\content\pies\decode-b64.py"
 echo     fdata = base64.b64decode(data).decode('utf-8')>>".\content\pies\decode-b64.py"
-echo     os.system("echo [36mnewten/menu/eb64/encoded-$ [92m" + fdata)>>".\content\pies\decode-b64.py"
+echo     os.system("echo [36mnewten/menu/db64/encoded-$ [92m" + fdata)>>".\content\pies\decode-b64.py"
 echo except:>>".\content\pies\decode-b64.py"
-echo     os.system("echo [36mnewten/menu/eb64/encoded-$ [91mUnable to decode data")>>".\content\pies\decode-b64.py"
+echo     os.system("echo [36mnewten/menu/db64/encoded-$ [91mUnable to decode data")>>".\content\pies\decode-b64.py"
 
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
@@ -224,7 +224,7 @@ goto menu
 set /p data=[36mnewten/menu/db64/input-# [34m
 echo %data%>".\content\temp\db64-tmpf.txt"
 .\content\pies\decode-b64.py
-echo [36mnewten/menu/eb64/input-$ [34mYour data was decoded
+echo [36mnewten/menu/db64/input-$ [34mYour data was decoded
 goto menu
 
 :faq
