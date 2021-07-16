@@ -1,5 +1,5 @@
 
--> Version 5.6 Base64 Update
+-> Version 6.0 Base64 Update
 
 - Newten now has the ability to encode and decode Base64 
 - New temp folder added to host containment for files used to hold transfer variables
