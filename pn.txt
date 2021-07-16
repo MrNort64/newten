@@ -5,3 +5,6 @@
 - New temp folder added to host containment for files used to hold transfer variables
 - Hack the box code was outdated and needs a new method which will be worked on and finished by the end of next week
 
+-> Version 6.1 FAQ Update
+
+- New menu selection providing you with faq
