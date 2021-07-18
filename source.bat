@@ -41,7 +41,7 @@ if errorlevel == 1 goto greeting
 
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
-if not exist ".\content\info\update_available.vbs" echo x=msgbox("A new update is available",64,"Newten Updater")>".\content\info\update_available.vbs"
+echo x=msgbox("A new update is available; use menu option 7 to install it",64,"Newten Updater")>".\content\info\update_available.vbs"
 
 :legacy
 if not exist ".\content\info\legacy_version.txt" echo %version%>.\content\info\legacy_version.txt
