@@ -22,7 +22,13 @@ echo     os.system("echo [36mnewten/menu/db64/encoded-$ [91mUnable to decode d
 
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
-timeout /t 2 >nul
+timeout /t 1 >nul
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [91mNetwork Error
+ping -n 1 www.google.com >nul
+if errorlevel == 1 timeout /t 1 >nul
+ping -n 1 www.google.com >nul
+if errorlevel == 1 goto greeting
 
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
@@ -36,6 +42,9 @@ if not %version% == %legacy_version% WScript ".\content\info\update_available.vb
 :greeting
 set /a ms= null
 title Newten %legacy_version% -=- By: Carbon
+ping -n 1 www.google.com >nul 
+if errorlevel == 1 set /p lv=<".\content\info\legacy_version.txt"
+if errorlevel == 1 title Newten %lv% -=- By: Carbon
 cls
 echo [31m-[35m1[31m- [35mIP Logger
 echo [31m-[35m2[31m- [35mIP Pinger
@@ -157,6 +166,7 @@ goto menu
 
 :discord
 echo [36mnewten/discord-$ [34;4mhttps://discord.gg/HX2sbyXGuj[0m
+start https://discord.gg/HX2sbyXGuj
 goto menu
 
 :freeStressers
