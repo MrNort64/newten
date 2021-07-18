@@ -115,6 +115,8 @@ echo Name: %log-name% - IP: %log-content% >>".\content\logs\%log-name%.txt"
 if not exist ".\content\logs\%log-name%.txt" echo [36mnewten/iplogger/error-$ [34mThere was an error creating your log
 if not exist ".\content\logs\%log-name%.txt" goto menu
 echo [36mnewten/iplogger/complete-$ [34mThe log %log-name% was created
+ping -n 1 %log-content% >nul
+if errorlevel == 1 echo [36mnewten/menu/iplogger/complete-$ [91mWARNING! New logged IP did not respond!
 goto menu
 
 :logView 
