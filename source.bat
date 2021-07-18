@@ -1,6 +1,7 @@
 @ECHO off
 
 if not exist ".\content\temp" mkdir ".\content\temp"
+if not exist ".\content\batches" mkdir ".\content\batches"
 
 echo import base64>".\content\pies\encode-b64.py"
 echo import os>>".\content\pies\encode-b64.py"
@@ -19,6 +20,14 @@ echo     fdata = base64.b64decode(data).decode('utf-8')>>".\content\pies\decode-
 echo     os.system("echo [36mnewten/menu/db64/encoded-$ [92m" + fdata)>>".\content\pies\decode-b64.py"
 echo except:>>".\content\pies\decode-b64.py"
 echo     os.system("echo [36mnewten/menu/db64/encoded-$ [91mUnable to decode data")>>".\content\pies\decode-b64.py"
+
+echo @echo off>".\content\batches\chatfeed.cmd"
+echo title Chat Feed from Cyber Point>>".\content\batches\chatfeed.cmd"
+echo :top>>".\content\batches\chatfeed.cmd"
+echo curl https://deepsmp.online/chatfeed.txt>>".\content\batches\chatfeed.cmd"
+echo timeout /t 3 >nul >>".\content\batches\chatfeed.cmd"
+echo cls>>".\content\batches\chatfeed.cmd"
+echo goto top>>".\content\batches\chatfeed.cmd"
 
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
@@ -46,7 +55,7 @@ ping -n 1 www.google.com >nul
 if errorlevel == 1 set /p lv=<".\content\info\legacy_version.txt"
 if errorlevel == 1 title Newten %lv% -=- By: Carbon
 cls
-echo [31m-[35m1[31m- [35mIP Logger
+echo [31m-[35m1[31m- [35mIP Logger			[31m-[35m21[31m- [35mDiscord Chat Feed
 echo [31m-[35m2[31m- [35mIP Pinger
 echo [31m-[35m3[31m- [35mLog View
 echo [31m-[35m4[31m- [35mpScan
@@ -65,6 +74,7 @@ echo [31m-[35m16[31m- [35mOpen Source Code
 echo [31m-[35m17[31m- [35mEncode to Base64
 echo [31m-[35m18[31m- [35mDecode from Base64
 echo [31m-[35m19[31m- [35mFAQ
+echo [31m-[35m20[31m- [35mIP Look-up
 echo.
 goto menu
 
@@ -89,6 +99,8 @@ if %ms% == 16 goto osc
 if %ms% == 17 goto eb64
 if %ms% == 18 goto db64
 if %ms% == 19 goto faq
+if %ms% == 20 goto ipl
+if %ms% == 21 goto discordchat
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -198,9 +210,9 @@ start cmd /c ".\content\animations\pinger.cmd"
 goto menu
 
 :patchNotes
-echo [36mnewten/menu/patch_notes-# [34m
+echo [36mnewten/menu/patch_notes-$ [34m
 ping -n 1 www.google.com >nul
-if errorlevel == 1 echo [36mnewten/menu/patch_notes-# [91mPatch Notes Unavailable
+if errorlevel == 1 echo [36mnewten/menu/patch_notes-$ [91mPatch Notes Unavailable
 if errorlevel == 1 goto menu
 curl https://raw.githubusercontent.com/MrNort64/newten/main/pn.txt
 echo.
@@ -234,9 +246,29 @@ goto menu
 :faq
 echo [36mnewten/menu/faq-# [34m
 ping -n 1 www.google.com >nul
-if errorlevel == 1 echo [36mnewten/menu/patch_notes-# [91mFAQ Unavailable
+if errorlevel == 1 echo [36mnewten/menu/faq-$ [91mFAQ Unavailable
 if errorlevel == 1 goto menu
 echo.
 curl https://raw.githubusercontent.com/MrNort64/newten/main/faq.txt
 echo.
+goto menu
+
+:ipl
+set /p ip=[36mnewten/menu/ip-lookup/ip-# [34m
+echo [36mnewten/menu/ip-lookup/response-$ [34;4mhttps://whatismyipaddress.com/ip/%ip%[0m
+echo [36mnewten/menu/ip-lookup/response/actions-$ [31m-[35m1[31m- [35mOpen In Browser [31m-[35m2[31m- [35mContinue To Menu
+set /p action=[36mnewten/menu/ip-lookup/action-# [34m
+if %action% == 1 start https://whatismyipaddress.com/ip/%ip%
+if %action% == 2 goto menu
+goto menu
+
+:discordchat
+echo [36mnewten/menu/discord-chatfeed-$ [34mTesting Connection to Server
+ping -n 1 deepsmp.online >nul
+if errorlevel == 1 echo [36mnewten/menu/discord-chatfeed-$ [91mUnavailable
+ping -n 1 deepsmp.online >nul
+if errorlevel == 1 goto menu
+echo [36mnewten/menu/discord-chatfeed-$ [34mServer Available... Starting chatfeed.cmd
+if not exist ".\content\batches\chatfeed.cmd" echo chatfeed.cmd is missing or broken && goto menu
+start cmd /c ".\content\batches\chatfeed.cmd"
 goto menu
