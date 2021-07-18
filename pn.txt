@@ -10,3 +10,8 @@
 - Fixed bug where title sets as "Native" when the network is unavailable
 - Fixed bug where Newten would tell you that there is an update available everytime you opened the program with no connection
 - Using the menu option for discord will now open your default browser bringing you to the link
+
+-> Version 6.4
+
+- New IP Lookup that builds a URL for you to visit based on a target IP
+- New discord chat feed from Cyber Point though as of the update release chat feed servers are offline but they should be online with in 3 days
