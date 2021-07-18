@@ -5,10 +5,8 @@
 - New temp folder added to host containment for files used to hold transfer variables
 - Hack the box code was outdated and needs a new method which will be worked on and finished by the end of next week
 
--> Version 6.1 FAQ Update
+-> Version 6.3
 
-- New menu selection providing you with faq
-
--> Version 6.2
-
-- It has been found that hack the box no longer requires you to hack for a code to join the site
+- Fixed bug where title sets as "Native" when the network is unavailable
+- Fixed bug where Newten would tell you that there is an update available everytime you opened the program with no connection
+- Using the menu option for discord will now open your default browser bringing you to the link
