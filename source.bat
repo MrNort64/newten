@@ -22,7 +22,7 @@ echo except:>>".\content\pies\decode-b64.py"
 echo     os.system("echo [36mnewten/menu/db64/encoded-$ [91mUnable to decode data")>>".\content\pies\decode-b64.py"
 
 echo @echo off>".\content\batches\chatfeed.cmd"
-echo title Chat Feed from Cyber Point>>".\content\batches\chatfeed.cmd"
+echo title Chat Feed from Project North>>".\content\batches\chatfeed.cmd"
 echo :top>>".\content\batches\chatfeed.cmd"
 echo curl https://deepsmp.online/chatfeed.txt>>".\content\batches\chatfeed.cmd"
 echo timeout /t 3 >nul >>".\content\batches\chatfeed.cmd"
@@ -270,7 +270,7 @@ ping -n 1 deepsmp.online >nul
 if errorlevel == 1 echo [36mnewten/menu/discord-chatfeed-$ [91mUnavailable
 ping -n 1 deepsmp.online >nul
 if errorlevel == 1 goto menu
-echo [36mnewten/menu/discord-chatfeed-$ [34mServer Available... Starting chatfeed.cmd
+echo [36mnewten/menu/discord-chatfeed-$ [92mServer Available... [34mStarting chatfeed.cmd
 if not exist ".\content\batches\chatfeed.cmd" echo chatfeed.cmd is missing or broken && goto menu
 start cmd /c ".\content\batches\chatfeed.cmd"
 goto menu
