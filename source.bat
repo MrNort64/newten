@@ -2,6 +2,8 @@
 
 if not exist ".\content\temp" mkdir ".\content\temp"
 if not exist ".\content\batches" mkdir ".\content\batches"
+if not exist ".\content\info\mail_addr.txt" echo example@projectn.com>".\content\info\mail_addr.txt"
+if not exist ".\content\info\mail_pass.txt" echo Pa55w0rd>".\content\info\mail_pass.txt"
 
 echo import base64>".\content\pies\encode-b64.py"
 echo import os>>".\content\pies\encode-b64.py"
@@ -28,6 +30,23 @@ echo curl https://deepsmp.online/chatfeed.txt>>".\content\batches\chatfeed.cmd"
 echo timeout /t 3 >nul >>".\content\batches\chatfeed.cmd"
 echo cls>>".\content\batches\chatfeed.cmd"
 echo goto top>>".\content\batches\chatfeed.cmd"
+
+echo import smtplib>".\content\pies\mailer.py"
+echo import os>>".\content\pies\mailer.py"
+echo try:>>".\content\pies\mailer.py"
+echo     f = open("./content/info/mail_addr.txt", "r")>>".\content\pies\mailer.py"
+echo     maddr = f.read()>>".\content\pies\mailer.py"
+echo     f = open("./content/info/mail_pass.txt", "r")>>".\content\pies\mailer.py"
+echo     mpass = f.read()>>".\content\pies\mailer.py"
+echo     server = smtplib.SMTP_SSL("smtp.gmail.com", 465)>>".\content\pies\mailer.py"
+echo     server.login(maddr, mpass)>>".\content\pies\mailer.py"
+echo     f = open("./content/temp/msendt_tmpf.txt", "r")>>".\content\pies\mailer.py"
+echo     i = open("./content/temp/msend-msg_tmpf.txt", "r")>>".\content\pies\mailer.py"
+echo     server.sendmail(maddr, f.read(), i.read())>>".\content\pies\mailer.py"
+echo     server.quit()>>".\content\pies\mailer.py"
+echo     os.system("echo [36mnewten/menu/mailsender-$ [92mEmail sent!")>>".\content\pies\mailer.py"
+echo except:>>".\content\pies\mailer.py"
+echo     os.system("echo [36mnewten/menu/mailsender-$ [91mEmail failed either because your Address or Password was wrong or less secure apps is not enabled on your account!")>>".\content\pies\mailer.py"
 
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
@@ -56,10 +75,10 @@ if errorlevel == 1 set /p lv=<".\content\info\legacy_version.txt"
 if errorlevel == 1 title Newten %lv% -=- By: Carbon
 cls
 echo [31m-[35m1[31m- [35mIP Logger			[31m-[35m21[31m- [35mDiscord Chat Feed
-echo [31m-[35m2[31m- [35mIP Pinger
-echo [31m-[35m3[31m- [35mLog View
-echo [31m-[35m4[31m- [35mpScan
-echo [31m-[35m5[31m- [35mPort Scanner
+echo [31m-[35m2[31m- [35mIP Pinger			[31m-[35m22[31m- [35mTest Connection
+echo [31m-[35m3[31m- [35mLog View			[31m-[35m23[31m- [35mMail Sender
+echo [31m-[35m4[31m- [35mpScan			[31m-[35m24[31m- [35mSet Email Profile
+echo [31m-[35m5[31m- [35mPort Scanner		[31m-[35m25[31m- [35mView Mail Credidentials
 echo [31m-[35m6[31m- [35mClear
 echo [31m-[35m7[31m- [35mUpdate Newten
 echo [31m-[35m8[31m- [35mExit
@@ -101,6 +120,10 @@ if %ms% == 18 goto db64
 if %ms% == 19 goto faq
 if %ms% == 20 goto ipl
 if %ms% == 21 goto discordchat
+if %ms% == 22 goto testcon
+if %ms% == 23 goto mailsender
+if %ms% == 24 goto mailset
+if %ms% == 25 goto mailcreds
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -273,4 +296,43 @@ if errorlevel == 1 goto menu
 echo [36mnewten/menu/discord-chatfeed-$ [92mServer Available... [34mStarting chatfeed.cmd
 if not exist ".\content\batches\chatfeed.cmd" echo chatfeed.cmd is missing or broken && goto menu
 start cmd /c ".\content\batches\chatfeed.cmd"
+goto menu
+
+:testcon
+echo [36mnewten/menu/test_connection-$ [34mTesting Connection...
+ping -n 1 www.google.com >nul
+if errorlevel == 1 goto offl
+echo [36mnewten/menu/test_connection-$ [92mConnection Available!
+goto menu
+
+:offl
+echo [36mnewten/menu/test_connection-$ [91mConnection Unavailable!
+goto menu
+
+:mailset
+echo [36mnewten/menu/mailset-$ [34mEnter your Email
+set /p newaddr=[36mnewten/menu/mailset-# [92m
+echo [36mnewten/menu/mailset-$ [34mEnter your Password
+set /p newpass=[36mnewten/menu/mailset-# [92m
+echo %newaddr%>".\content\info\mail_addr.txt"
+echo %newpass%>".\content\info\mail_pass.txt"
+echo [36mnewten/menu/mailset-$ [92mNew Credidentials set!
+goto menu
+
+:mailsender
+echo [36mnewten/menu/mailsender-$ [34mEnter email properties
+echo [36mnewten/menu/mailsender-$ [34mEnter Target Email
+set /p to=[36mnewten/menu/mailsender/recipiant-# [92m
+echo [36mnewten/menu/mailsender-$ [34mEnter the message
+set /p msg=[36mnewten/menu/mailsender/msg-# [92m
+echo %to%>".\content\temp\msendt_tmpf.txt"
+echo %msg%>".\content\temp\msend-msg_tmpf.txt"
+echo [36mnewten/menu/mailsender-$ [34mSending your email...
+.\content\pies\mailer.py
+goto menu
+
+:mailcreds
+set /p addr=<".\content\info\mail_addr.txt"
+set /p mpass=<".\content\info\mail_pass.txt"
+echo [36mnewten/menu/mail_credidentials-$ [34mMail Address: [92m%addr% [34mMail Password: [92m%mpass%
 goto menu
