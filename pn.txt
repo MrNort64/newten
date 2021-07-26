@@ -21,4 +21,4 @@
 -> Version 1.7.1
 
 - New Email sending option
-- Discord chat feed server are eunning but they are having trouble requesting the chat
+- Discord chat feed servers are running but they are having trouble requesting the chat
