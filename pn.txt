@@ -14,6 +14,11 @@
 -> Version 6.4
 
 - New IP Lookup that builds a URL for you to visit based on a target IP
-- New discord chat feed from Cyber Point though as of the update release chat feed servers are offline but they should be online with in 3 days
+- New discord chat feed from Project North though as of the update release chat feed servers are offline but they should be online with in 3 days
 - New update notification
 - After creating a new IP log Newten will tell you if the IP you just logged does not respond
+
+-> Version 1.7.1
+
+- New Email sending option
+- Discord chat feed server are eunning but they are having trouble requesting the chat
