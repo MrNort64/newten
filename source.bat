@@ -46,7 +46,7 @@ echo     server.sendmail(maddr, f.read(), i.read())>>".\content\pies\mailer.py"
 echo     server.quit()>>".\content\pies\mailer.py"
 echo     os.system("echo [36mnewten/menu/mailsender-$ [92mEmail sent!")>>".\content\pies\mailer.py"
 echo except:>>".\content\pies\mailer.py"
-echo     os.system("echo [36mnewten/menu/mailsender-$ [91mEmail failed either because your Address or Password was wrong or less secure apps is not enabled on your account!")>>".\content\pies\mailer.py"
+echo     os.system("echo [36mnewten/menu/mailsender-$ [91mEmail failed!")>>".\content\pies\mailer.py"
 
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
@@ -79,8 +79,8 @@ echo [31m-[35m2[31m- [35mIP Pinger			[31m-[35m22[31m- [35mTest Connectio
 echo [31m-[35m3[31m- [35mLog View			[31m-[35m23[31m- [35mMail Sender
 echo [31m-[35m4[31m- [35mpScan			[31m-[35m24[31m- [35mSet Email Profile
 echo [31m-[35m5[31m- [35mPort Scanner		[31m-[35m25[31m- [35mView Mail Credidentials
-echo [31m-[35m6[31m- [35mClear
-echo [31m-[35m7[31m- [35mUpdate Newten
+echo [31m-[35m6[31m- [35mClear			[31m-[35m26[31m- [35mCyber Hub
+echo [31m-[35m7[31m- [35mUpdate Newten		[31m-[35m27[31m- [35mDiagnose Newten
 echo [31m-[35m8[31m- [35mExit
 echo [31m-[35m9[31m- [35mDelete Log
 echo [31m-[35m10[31m- [35mDiscord
@@ -124,6 +124,8 @@ if %ms% == 22 goto testcon
 if %ms% == 23 goto mailsender
 if %ms% == 24 goto mailset
 if %ms% == 25 goto mailcreds
+if %ms% == 26 goto cyberhub
+if %ms% == 27 goto diagnose
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -335,4 +337,42 @@ goto menu
 set /p addr=<".\content\info\mail_addr.txt"
 set /p mpass=<".\content\info\mail_pass.txt"
 echo [36mnewten/menu/mail_credidentials-$ [34mMail Address: [92m%addr% [34mMail Password: [92m%mpass%
+goto menu
+
+:cyberhub
+echo [36mnewten/menu/cyberhub-$ [34mStarting your default browser...
+start https://cyber-hub.pw/
+goto menu
+
+:diagnose
+echo [36mnewten/menu/diagnose-$ [34mPlease wait...
+echo [36mnewten/menu/diagnose-$ [34mVarifying file integrity...
+set /a x=0
+set /a z=0
+if not exist ".\content" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/ =- & set /a z=%z%+1
+if exist ".\content" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/ =- & set /a x=%x%+1
+if not exist ".\content\animations" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/animations/ =- & set /a z=%z%+1
+if exist ".\content\animations" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/animations/ =- & set /a x=%x%+1
+if not exist ".\content\batches" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/batches/ =- & set /a z=%z%+1
+if exist ".\content\batches" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/batches/ =- & set /a x=%x%+1
+if not exist ".\content\exes" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/exes/ =- & set /a z=%z%+1
+if exist ".\content\exes" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/exes/ =- & set /a x=%x%+1
+if not exist ".\content\info" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/info/ =- & set /a z=%z%+1
+if exist ".\content\info" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/info/ =- & set /a x=%x%+1
+if not exist ".\content\logs" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/logs/ =- & set /a z=%z%+1
+if exist ".\content\logs" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/logs/ =- & set /a x=%x%+1
+if not exist ".\content\pies" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/pies/ =- & set /a z=%z%+1
+if exist ".\content\pies" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/pies/ =- & set /a x=%x%+1
+if not exist ".\content\temp" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/temp/ =- & set /a z=%z%+1
+if exist ".\content\temp" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/temp/ =- & set /a x=%x%+1
+if not exist ".\updater\con-test.bat" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/updater/con-test.bat/ =- & set /a z=%z%+1
+if exist ".\updater\con-test.bat" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/updater/con-test.bat/ =- & set /a x=%x%+1
+if not exist ".\updater\stream.py" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/updater/stream.py/ =- & set /a z=%z%+1
+if exist ".\updater\stream.py" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/updater/stream.py/ =- & set /a x=%x%+1
+if not exist ".\updater\temp" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/updater/temp/ =- & set /a z=%z%+1
+if exist ".\updater\temp" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/updater/temp/ =- & set /a x=%x%+1
+if not exist ".\updater\instants" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/updater/instants/ =- & set /a z=%z%+1
+if exist ".\updater\instants" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/updater/instants/ =- & set /a x=%x%+1
+echo [36mnewten/menu/diagnose-$ [34mResults Ratio...
+echo [36mnewten/menu/diagnose-$ [92m%x%[34m:[91m%z%
 goto menu
