@@ -1,24 +1,10 @@
-
--> Version 6.0 Base64 Update
-
-- Newten now has the ability to encode and decode Base64 
-- New temp folder added to host containment for files used to hold transfer variables
-- Hack the box code was outdated and needs a new method which will be worked on and finished by the end of next week
-
--> Version 6.3
-
-- Fixed bug where title sets as "Native" when the network is unavailable
-- Fixed bug where Newten would tell you that there is an update available everytime you opened the program with no connection
-- Using the menu option for discord will now open your default browser bringing you to the link
-
--> Version 6.4
-
-- New IP Lookup that builds a URL for you to visit based on a target IP
-- New discord chat feed from Project North though as of the update release chat feed servers are offline but they should be online with in 3 days
-- New update notification
-- After creating a new IP log Newten will tell you if the IP you just logged does not respond
-
 -> Version 1.7.1
 
 - New Email sending option
 - Discord chat feed servers are running but they are having trouble requesting the chat
+
+-> Version 1.8.1
+
+- Added a new website link to Cyber Hub
+- Added the ability to varify the integrity of Newten's Files
+- Newten gives you a error ratio after diagnosing the program
