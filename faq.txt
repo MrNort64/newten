@@ -1,3 +1,11 @@
 You may ask questions in the discord
 
-Have ya ever had a dream where you had to fight an old short haired woman that was really good at throwing knives with a plastic shovel then killed each other at the same time but you died with a slow motion shot of a knife going through your head?
+ -=-=-=-=-
+ 
+How can I update Newten? -> Menu option 7
+
+How to tell if Newten has an update? -> It will alert you when you open the program
+
+Why is it not possible to download from github? -> Because Newten relies on it's main source code and ONLY its main source code to update.. Newten updates it's source code and then when you run the program again the source code will install all the nessesary new files from the update this reduces bandwidth strain and it makes updates much faster. Overall you cant download Newten from github because you arnt supposed to. git hub is only meant to tell the program if an update is available and provide the program with the nessesary files.
+
+What does legacy version do? -> legacy_version.txt is a file in the program directory that is always set to the version that Newten last updated to so if version.txt changes Newten will notice that legacy_version.txt and version.txt do not match so is tells you there is an update
