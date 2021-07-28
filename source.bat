@@ -91,7 +91,7 @@ echo [31m-[35m5[31m- [35mPort Scanner		[31m-[35m25[31m- [35mView Mail Cr
 echo [31m-[35m6[31m- [35mClear			[31m-[35m26[31m- [35mCyber Hub
 echo [31m-[35m7[31m- [35mUpdate Newten		[31m-[35m27[31m- [35mDiagnose Newten
 echo [31m-[35m8[31m- [35mExit			[31m-[35m28[31m- [35mKahoot Flooder
-echo [31m-[35m9[31m- [35mDelete Log			[31m-[35m29[31m- [35mInstall Kahoot.js-updated	
+echo [31m-[35m9[31m- [35mDelete Log			[31m-[35m29[31m- [35mInstall kahoot-spammer	
 echo [31m-[35m10[31m- [35mDiscord			[31m-[35m30[31m- [35mRequired Programs
 echo [31m-[35m11[31m- [35mFree Stressers		[31m-[35m31[31m- [35mFlood Last Kahoot Game
 echo [31m-[35m12[31m- [35mHack The Box Code
