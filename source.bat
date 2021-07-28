@@ -94,7 +94,7 @@ echo [31m-[35m8[31m- [35mExit			[31m-[35m28[31m- [35mKahoot Flooder
 echo [31m-[35m9[31m- [35mDelete Log			[31m-[35m29[31m- [35mInstall kahoot-spammer	
 echo [31m-[35m10[31m- [35mDiscord			[31m-[35m30[31m- [35mRequired Programs
 echo [31m-[35m11[31m- [35mFree Stressers		[31m-[35m31[31m- [35mFlood Last Kahoot Game
-echo [31m-[35m12[31m- [35mHack The Box Code
+echo [31m-[35m12[31m- [35mHack The Box Code		[31m-[35m32[31m- [35mVedbex
 echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
 echo [31m-[35m14[31m- [35mPatch Notes
 echo [31m-[35m15[31m- [35mSource Code
@@ -139,6 +139,7 @@ if %ms% == 28 goto kahootflood
 if %ms% == 29 goto installkp
 if %ms% == 30 goto requirep
 if %ms% == 31 goto floodlastk
+if %ms% == 32 goto vedbex
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -431,4 +432,9 @@ ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [36mnewten/menu/requirep-$ [91mYou will not be able to access these links because your connection is unavailable!
 echo [36mnewten/menu/requirep-$ [92mhttps://nodejs.org/en/
 echo [36mnewten/menu/requirep-$ [92mhttps://www.python.org/
+goto menu
+
+:vedbex
+echo [36mnewten/menu/vedbex-$ [34mStarting your default browser...
+start https://www.vedbex.com/tools/home
 goto menu
