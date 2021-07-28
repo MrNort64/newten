@@ -4,6 +4,15 @@ if not exist ".\content\temp" mkdir ".\content\temp"
 if not exist ".\content\batches" mkdir ".\content\batches"
 if not exist ".\content\info\mail_addr.txt" echo example@projectn.com>".\content\info\mail_addr.txt"
 if not exist ".\content\info\mail_pass.txt" echo Pa55w0rd>".\content\info\mail_pass.txt"
+if not exist ".\content\nodes" mkdir ".\content\nodes"
+
+echo npm install kahoot-spammer>".\content\batches\kahootpy.cmd"
+
+echo @echo off>".\content\batches\kahootf.cmd"
+echo title Spamming>>".\content\batches\kahootf.cmd"
+echo echo [36mnewten/menu/kahootflood-$ [34mSpamming!>>".\content\batches\kahootf.cmd"
+echo node .\content\nodes\kahootflood.js>>".\content\batches\kahootf.cmd"
+echo pause >nul
 
 echo import base64>".\content\pies\encode-b64.py"
 echo import os>>".\content\pies\encode-b64.py"
@@ -81,10 +90,10 @@ echo [31m-[35m4[31m- [35mpScan			[31m-[35m24[31m- [35mSet Email Profile
 echo [31m-[35m5[31m- [35mPort Scanner		[31m-[35m25[31m- [35mView Mail Credidentials
 echo [31m-[35m6[31m- [35mClear			[31m-[35m26[31m- [35mCyber Hub
 echo [31m-[35m7[31m- [35mUpdate Newten		[31m-[35m27[31m- [35mDiagnose Newten
-echo [31m-[35m8[31m- [35mExit
-echo [31m-[35m9[31m- [35mDelete Log
-echo [31m-[35m10[31m- [35mDiscord
-echo [31m-[35m11[31m- [35mFree Stressers
+echo [31m-[35m8[31m- [35mExit			[31m-[35m28[31m- [35mKahoot Flooder
+echo [31m-[35m9[31m- [35mDelete Log			[31m-[35m29[31m- [35mInstall Kahoot.js-updated	
+echo [31m-[35m10[31m- [35mDiscord			[31m-[35m30[31m- [35mRequired Programs
+echo [31m-[35m11[31m- [35mFree Stressers		[31m-[35m31[31m- [35mFlood Last Kahoot Game
 echo [31m-[35m12[31m- [35mHack The Box Code
 echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
 echo [31m-[35m14[31m- [35mPatch Notes
@@ -126,6 +135,10 @@ if %ms% == 24 goto mailset
 if %ms% == 25 goto mailcreds
 if %ms% == 26 goto cyberhub
 if %ms% == 27 goto diagnose
+if %ms% == 28 goto kahootflood
+if %ms% == 29 goto installkp
+if %ms% == 30 goto requirep
+if %ms% == 31 goto floodlastk
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -373,6 +386,49 @@ if not exist ".\updater\temp" echo [36mnewten/menu/diagnose-$ [91mFile lost! -
 if exist ".\updater\temp" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/updater/temp/ =- & set /a x=%x%+1
 if not exist ".\updater\instants" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/updater/instants/ =- & set /a z=%z%+1
 if exist ".\updater\instants" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/updater/instants/ =- & set /a x=%x%+1
+if not exist ".\content\nodes" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/nodes/ =- & set /a z=%z%+1
+if exist ".\content\nodes" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/nodes/ =- & set /a x=%x%+1
 echo [36mnewten/menu/diagnose-$ [34mResults Ratio...
 echo [36mnewten/menu/diagnose-$ [92m%x%[34m:[91m%z%
+goto menu
+
+:kahootflood
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/kahootflood-$ [91mNetwork Error! & goto menu
+echo [36mnewten/menu/kahootflood-$ [34mEnter Game Pin...
+set /p gamePin=[36mnewten/menu/kahootflood/pin-# [34m
+echo [36mnewten/menu/kahootflood-$ [34mEnter Bot Prefix...
+set /p gamePrefix=[36mnewten/menu/kahootflood/prefix-# [34m
+echo [36mnewten/menu/kahootflood-$ [34mEnter Number of Bots...
+set /p numBots=[36mnewten/menu/kahootflood/bot_amount-# [34m
+echo [36mnewten/menu/kahootflood-$ [34mStarting kahootflood.py...
+echo try{const KahootSpammer = require('kahoot-spammer')>".\content\nodes\kahootflood.js"
+echo const api = KahootSpammer>>".\content\nodes\kahootflood.js"
+echo api.spam(%gamePin%, "%gamePrefix%", %numBots%).catch()}catch(error){console.log("[36mnewten/menu/kahootflood-$ [91mError Game Pin Expired!")}>>".\content\nodes\kahootflood.js">>".\content\nodes\kahootflood.js"
+start cmd /c ".\content\batches\kahootf.cmd"
+echo [36mnewten/menu/kahootflood-$ [92mFinished!
+goto menu
+
+:floodlastk
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/kahootflood-$ [91mNetwork Error! & goto menu
+echo [36mnewten/menu/kahootflood-$ [34mStarting kahootflood.py...
+start cmd /c ".\content\batches\kahootf.cmd"
+echo [36mnewten/menu/kahootflood-$ [92mFinished!
+goto menu
+
+:installkp
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/installkp-$ [91mNetwork Error! & goto menu
+echo [36mnewten/menu/installkp-$ [34mStarting Installer...
+start cmd /c ".\content\batches\kahootpy.cmd"
+echo [36mnewten/menu/kahootflood-$ [92mDone!
+goto menu
+
+:requirep
+echo [36mnewten/menu/requirep-$ [34mHere is a list of required programs for Newten to run properly.
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/requirep-$ [91mYou will not be able to access these links because your connection is unavailable!
+echo [36mnewten/menu/requirep-$ [92mhttps://nodejs.org/en/
+echo [36mnewten/menu/requirep-$ [92mhttps://www.python.org/
 goto menu
