@@ -8,3 +8,8 @@
 - Added a new website link to Cyber Hub
 - Added the ability to varify the integrity of Newten's Files
 - Newten gives you a error ratio after diagnosing the program
+
+-> Version 1.9.1
+
+- Newten now has the ability to spam Kahoot Games!!!!
+- Added a menu option that tells you the nessesary programs to download for newten to work properly
