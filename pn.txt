@@ -5,5 +5,5 @@
 
 -> Version 1.10.2 - Yes maybe I need to branch out and do something different with my life... but i wont
 
-- I spent 5 hours programming an email spam feture into the multi tool
+- I spent 5 hours programming an email spam feature into the multi tool
 - Since batch couldnt add the mail spammer i needed to use a seperate file thats sends a pull request to github ._. have fun
