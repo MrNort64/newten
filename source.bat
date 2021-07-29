@@ -8,6 +8,23 @@ if not exist ".\content\nodes" mkdir ".\content\nodes"
 
 echo npm install kahoot-spammer>".\content\batches\kahootpy.cmd"
 
+echo @ECHO off>".\content\batches\mailbomber.cmd"
+echo title Mail Spammer>>".\content\batches\mailbomber.cmd"
+echo .\content\pies\mailspam.py>>".\content\batches\mailbomber.cmd"
+echo pause>>".\content\batches\mailbomber.cmd"
+
+echo import urllib.request>".\content\pies\intallmailspam.py"
+echo import os>>".\content\pies\intallmailspam.py"
+echo try:>>".\content\pies\intallmailspam.py"
+echo     updateURL = "https://raw.githubusercontent.com/MrNort64/newten/main/pies/mailspam.py">>".\content\pies\intallmailspam.py"
+echo     sourceCodeGet = urllib.request.urlopen(updateURL)>>".\content\pies\intallmailspam.py"
+echo     sourceCode = sourceCodeGet.read()>>".\content\pies\intallmailspam.py"
+echo     f = open('./content/pies/mailspam.py', 'w')>>".\content\pies\intallmailspam.py"
+echo     f.write(sourceCode.decode())>>".\content\pies\intallmailspam.py"
+echo     f.close()>>".\content\pies\intallmailspam.py"
+echo except:>>".\content\pies\intallmailspam.py"
+echo 	 os.system("echo [91mError interacting with mailspam.py")>>".\content\pies\intallmailspam.py"
+
 echo @echo off>".\content\batches\kahootf.cmd"
 echo title Spamming>>".\content\batches\kahootf.cmd"
 echo echo [36mnewten/menu/kahootflood-$ [34mSpamming!>>".\content\batches\kahootf.cmd"
@@ -70,6 +87,7 @@ if errorlevel == 1 goto greeting
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
 echo x=msgbox("A new update is available; use menu option 7 to install it",64,"Newten Updater")>".\content\info\update_available.vbs"
+.\content\pies\intallmailspam.py
 
 :legacy
 if not exist ".\content\info\legacy_version.txt" echo %version%>.\content\info\legacy_version.txt
@@ -95,7 +113,7 @@ echo [31m-[35m9[31m- [35mDelete Log			[31m-[35m29[31m- [35mInstall kahoo
 echo [31m-[35m10[31m- [35mDiscord			[31m-[35m30[31m- [35mRequired Programs
 echo [31m-[35m11[31m- [35mFree Stressers		[31m-[35m31[31m- [35mFlood Last Kahoot Game
 echo [31m-[35m12[31m- [35mHack The Box Code		[31m-[35m32[31m- [35mVedbex
-echo [31m-[35m13[31m- [35m1.1.1.1 Pinger
+echo [31m-[35m13[31m- [35m1.1.1.1 Pinger		[31m-[35m33[31m- [35mMail Bomber
 echo [31m-[35m14[31m- [35mPatch Notes
 echo [31m-[35m15[31m- [35mSource Code
 echo [31m-[35m16[31m- [35mOpen Source Code
@@ -140,6 +158,7 @@ if %ms% == 29 goto installkp
 if %ms% == 30 goto requirep
 if %ms% == 31 goto floodlastk
 if %ms% == 32 goto vedbex
+if %ms% == 33 goto mailbomb
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -295,12 +314,12 @@ echo.
 goto menu
 
 :ipl
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/ip-lookup-$ [91mNetwork Error! & goto menu
 set /p ip=[36mnewten/menu/ip-lookup/ip-# [34m
-echo [36mnewten/menu/ip-lookup/response-$ [34;4mhttps://whatismyipaddress.com/ip/%ip%[0m
-echo [36mnewten/menu/ip-lookup/response/actions-$ [31m-[35m1[31m- [35mOpen In Browser [31m-[35m2[31m- [35mContinue To Menu
-set /p action=[36mnewten/menu/ip-lookup/action-# [34m
-if %action% == 1 start https://whatismyipaddress.com/ip/%ip%
-if %action% == 2 goto menu
+echo [36mnewten/menu/ip-lookup/response-$ [34mTraced Info.[92m
+curl http://ipinfo.io/%ip%/json
+echo.
 goto menu
 
 :discordchat
@@ -437,4 +456,19 @@ goto menu
 :vedbex
 echo [36mnewten/menu/vedbex-$ [34mStarting your default browser...
 start https://www.vedbex.com/tools/home
+goto menu
+
+:mailbomb
+echo [36mnewten/menu/mailbomb-$ [34mEnter target email.
+set /p bombLoc=[36mnewten/menu/mailbomb/email_target-# [92m
+echo [36mnewten/menu/mailbomb-$ [34mEnter message.
+set /p message=[36mnewten/menu/mailbomb/message-# [92m
+echo [36mnewten/menu/mailbomb-$ [34mNumber of sendings.
+set /p send_num=[36mnewten/menu/mailbomb/send_number-# [92m
+if %send_num% == 1 echo [36mnewten/menu/mailbomb-$ [34mSending Email...
+if not %send_num% == 1 echo [36mnewten/menu/mailbomb-$ [34mSending Emails...
+echo %send_num%>".\content\temp\mbsn_tmpf.txt"
+echo %message%>".\content\temp\mbmsg_tmpf.txt"
+echo %bombLoc%>".\content\temp\mbbl_tmpf.txt"
+start cmd /c ".\content\batches\mailbomber.cmd"
 goto menu
