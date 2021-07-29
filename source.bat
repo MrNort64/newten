@@ -76,6 +76,7 @@ echo     os.system("echo [36mnewten/menu/mailsender-$ [91mEmail failed!")>>".\
 
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
+echo.
 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [91mNetwork Error
@@ -83,6 +84,10 @@ ping -n 1 www.google.com >nul
 if errorlevel == 1 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
 if errorlevel == 1 goto greeting
+if not exist "C:\Program Files\nodejs" echo [91mError Node.js was not found some features may not work properly!
+if exist "C:\Program Files\nodejs" echo [92mNode.js installation confirmed!
+if not exist "C:\Windows\py.exe" echo [91mError Python was not found some features may not work properly! & timeout /t 1 >nul
+if exist "C:\Windows\py.exe" echo [92mPython installation confirmed! & timeout /t 1 >nul
 
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
@@ -163,6 +168,7 @@ echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
 :ipLogger
+if not exist ".\content\logs" mkdir ".\content\logs" & echo [36mnewten/iplogger-$ [92mLogs folder created because it was [91mmissing
 echo [36mnewten/iplogger-$ [34mEnter the log name
 set /p log-name= [36mnewten/iplogger/name-# [34m
 if exist ".\content\logs\%log-name%.txt" echo [36mnewten/iplogger/error-$ [34mThere is already a log with that name
