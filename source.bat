@@ -67,7 +67,7 @@ echo     mpass = f.read()>>".\content\pies\mailer.py"
 echo     server = smtplib.SMTP_SSL("smtp.gmail.com", 465)>>".\content\pies\mailer.py"
 echo     server.login(maddr, mpass)>>".\content\pies\mailer.py"
 echo     f = open("./content/temp/msendt_tmpf.txt", "r")>>".\content\pies\mailer.py"
-echo     i = open("./content/temp/msend-msg_tmpf.txt", "r")>>".\content\pies\mailer.py"
+echo     i = open("./content/temp/msend-msg_tmpf.txt", "r")>>".\content\pies\mailer.py" 
 echo     server.sendmail(maddr, f.read(), i.read())>>".\content\pies\mailer.py"
 echo     server.quit()>>".\content\pies\mailer.py"
 echo     os.system("echo [36mnewten/menu/mailsender-$ [92mEmail sent!")>>".\content\pies\mailer.py"
@@ -187,6 +187,8 @@ echo [36mnewten/logview/logdata$ [34m%log-data%
 goto menu
 
 :pinger
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/pinger-$ [91mNetwork Error! & goto menu
 echo [36mnewten/pinger-$ [34mEnter the IP you want to ping
 set /p ip= [36mnewten/pinger/ip-# [34m
 if not exist ".\content\animations\pinger.cmd" echo [36mnewten/pinger/error-$ [34mpinger.cmd is broken or missing
@@ -237,6 +239,8 @@ echo [36mnewten/logdelete/done-$ [34mLog %dlog-name%.txt was deleted
 goto menu
 
 :discord
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/discord-$ [91mNetwork Error! & goto menu
 echo [36mnewten/discord-$ [34;4mhttps://discord.gg/HX2sbyXGuj[0m
 start https://discord.gg/HX2sbyXGuj
 goto menu
@@ -283,6 +287,8 @@ echo [36mnewten/menu/sourceCode-$ [34m[4mhttps://github.com/MrNort64/newten[
 goto menu
 
 :osc
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/sourceCode-$ [91mNetwork Error! & goto menu
 echo [36mnewten/menu/sourceCode-$ [34mStarting your default browser
 start https://github.com/MrNort64/newten
 if errorlevel == 1 echo [36mnewten/menu/sourceCode-# [91mError opening source code
@@ -355,6 +361,8 @@ echo [36mnewten/menu/mailset-$ [92mNew Credidentials set!
 goto menu
 
 :mailsender
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/mailsender-$ [91mNetwork Error! & goto menu
 echo [36mnewten/menu/mailsender-$ [34mEnter email properties
 echo [36mnewten/menu/mailsender-$ [34mEnter Target Email
 set /p to=[36mnewten/menu/mailsender/recipiant-# [92m
@@ -373,6 +381,8 @@ echo [36mnewten/menu/mail_credidentials-$ [34mMail Address: [92m%addr% [34mM
 goto menu
 
 :cyberhub
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/cyberhub-$ [91mNetwork Error! & goto menu
 echo [36mnewten/menu/cyberhub-$ [34mStarting your default browser...
 start https://cyber-hub.pw/
 goto menu
@@ -454,11 +464,15 @@ echo [36mnewten/menu/requirep-$ [92mhttps://www.python.org/
 goto menu
 
 :vedbex
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/vedbex-$ [91mNetwork Error! & goto menu
 echo [36mnewten/menu/vedbex-$ [34mStarting your default browser...
 start https://www.vedbex.com/tools/home
 goto menu
 
 :mailbomb
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/mailbomb-$ [91mNetwork Error! & goto menu
 echo [36mnewten/menu/mailbomb-$ [34mEnter target email.
 set /p bombLoc=[36mnewten/menu/mailbomb/email_target-# [92m
 echo [36mnewten/menu/mailbomb-$ [34mEnter message.
