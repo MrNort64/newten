@@ -1,15 +1,9 @@
--> Version 1.7.1
-
-- New Email sending option
-- Discord chat feed servers are running but they are having trouble requesting the chat
-
--> Version 1.8.1
-
-- Added a new website link to Cyber Hub
-- Added the ability to varify the integrity of Newten's Files
-- Newten gives you a error ratio after diagnosing the program
-
--> Version 1.9.1
+-> Version 1.9.2
 
 - Newten now has the ability to spam Kahoot Games!!!!
 - Added a menu option that tells you the nessesary programs to download for newten to work properly
+
+-> Version 1.10.2 - Yes maybe I need to branch out and do something different with my life... but i wont
+
+- I spent 5 hours programming an email spam feture into the multi tool
+- Since batch couldnt add the mail spammer i needed to use a seperate file thats sends a pull request to github ._. have fun
