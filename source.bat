@@ -77,17 +77,17 @@ echo     os.system("echo [36mnewten/menu/mailsender-$ [91mEmail failed!")>>".\
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 echo.
+if not exist "C:\Program Files\nodejs" echo [91mError Node.js was not found some features may not work properly!
+if exist "C:\Program Files\nodejs" echo [92mNode.js installation confirmed!
+if not exist "C:\Windows\py.exe" echo [91mError Python was not found some features may not work properly! & timeout /t 1 >nul
+if exist "C:\Windows\py.exe" echo [92mPython installation confirmed! & timeout /t 1 >nul
 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [91mNetwork Error
 ping -n 1 www.google.com >nul
 if errorlevel == 1 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
-if errorlevel == 1 goto greeting
-if not exist "C:\Program Files\nodejs" echo [91mError Node.js was not found some features may not work properly!
-if exist "C:\Program Files\nodejs" echo [92mNode.js installation confirmed!
-if not exist "C:\Windows\py.exe" echo [91mError Python was not found some features may not work properly! & timeout /t 1 >nul
-if exist "C:\Windows\py.exe" echo [92mPython installation confirmed! & timeout /t 1 >nul
+if errorlevel == 1 goto greetinga
 
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
