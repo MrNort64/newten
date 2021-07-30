@@ -94,7 +94,6 @@ if exist "C:\Program Files\nodejs" echo [92mNode.js installation confirmed!
 if not exist "C:\Windows\py.exe" echo [91mError Python was not found some features may not work properly! & timeout /t 1 >nul
 if exist "C:\Windows\py.exe" echo [92mPython installation confirmed! & timeout /t 1 >nul
 
-timeout /t 1 >nul
 ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [91mNetwork Error
 ping -n 1 www.google.com >nul
