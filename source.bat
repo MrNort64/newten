@@ -74,6 +74,18 @@ echo     os.system("echo [36mnewten/menu/mailsender-$ [92mEmail sent!")>>".\co
 echo except:>>".\content\pies\mailer.py"
 echo     os.system("echo [36mnewten/menu/mailsender-$ [91mEmail failed!")>>".\content\pies\mailer.py"
 
+echo import urllib.request>".\content\pies\updatepingtool.py"
+echo import os>>".\content\pies\updatepingtool.py"
+echo try:>>".\content\pies\updatepingtool.py"
+echo     updateURL = "https://raw.githubusercontent.com/MrNort64/newten/main/batches/pinger.cmd">>".\content\pies\updatepingtool.py"
+echo     sourceCodeGet = urllib.request.urlopen(updateURL)>>".\content\pies\updatepingtool.py"
+echo     sourceCode = sourceCodeGet.read()>>".\content\pies\updatepingtool.py"
+echo     f = open('./content/animations/pinger.cmd', 'w')>>".\content\pies\updatepingtool.py"
+echo     f.write(sourceCode.decode())>>".\content\pies\updatepingtool.py"
+echo     f.close()>>".\content\pies\updatepingtool.py"
+echo except:>>".\content\pies\updatepingtool.py"
+echo 	 os.system("echo [91mError interacting with pinger.cmd")>>".\content\pies\updatepingtool.py"
+
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 echo.
@@ -81,6 +93,7 @@ if not exist "C:\Program Files\nodejs" echo [91mError Node.js was not found som
 if exist "C:\Program Files\nodejs" echo [92mNode.js installation confirmed!
 if not exist "C:\Windows\py.exe" echo [91mError Python was not found some features may not work properly! & timeout /t 1 >nul
 if exist "C:\Windows\py.exe" echo [92mPython installation confirmed! & timeout /t 1 >nul
+
 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [91mNetwork Error
@@ -88,11 +101,18 @@ ping -n 1 www.google.com >nul
 if errorlevel == 1 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
 if errorlevel == 1 goto greeting
-
+echo.
+echo [92mGetting real version...
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
+echo [92mSuccess [97m%version%
 echo x=msgbox("A new update is available; use menu option 7 to install it",64,"Newten Updater")>".\content\info\update_available.vbs"
+echo [92mRepolishong Newten from github...
+echo [92mVarifying Mailspam.py...
 .\content\pies\intallmailspam.py
+echo [92mVarifying Pinger.cmd...
+.\content\pies\updatepingtool.py
+echo [92mDone!
 
 :legacy
 if not exist ".\content\info\legacy_version.txt" echo %version%>.\content\info\legacy_version.txt
