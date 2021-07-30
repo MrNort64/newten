@@ -87,7 +87,7 @@ if errorlevel == 1 echo [91mNetwork Error
 ping -n 1 www.google.com >nul
 if errorlevel == 1 timeout /t 1 >nul
 ping -n 1 www.google.com >nul
-if errorlevel == 1 goto greetinga
+if errorlevel == 1 goto greeting
 
 .\content\pies\version.py
 set /p version=<".\content\info\version.txt"
