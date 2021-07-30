@@ -119,10 +119,9 @@ echo [31m-[35m10[31m- [35mDiscord			[31m-[35m30[31m- [35mRequired Progra
 echo [31m-[35m11[31m- [35mFree Stressers		[31m-[35m31[31m- [35mFlood Last Kahoot Game
 echo [31m-[35m12[31m- [35mHack The Box Code		[31m-[35m32[31m- [35mVedbex
 echo [31m-[35m13[31m- [35m1.1.1.1 Pinger		[31m-[35m33[31m- [35mMail Bomber
-echo [31m-[35m14[31m- [35mPatch Notes
-echo [31m-[35m15[31m- [35mSource Code
-echo [31m-[35m16[31m- [35mOpen Source Code
-echo [31m-[35m17[31m- [35mEncode to Base64
+echo [31m-[35m14[31m- [35mPatch Notes		[31m-[35m34[31m- [35mResend Last Email Bomb
+echo [31m-[35m15[31m- [35mSource Code		[31m-[35m35[31m- [35mPing Last Logged IP
+echo [31m-[35m17[31m- [35mEncode to Base64		[31m-[35m36[31m- [35mPing Last Pinged IP
 echo [31m-[35m18[31m- [35mDecode from Base64
 echo [31m-[35m19[31m- [35mFAQ
 echo [31m-[35m20[31m- [35mIP Look-up
@@ -164,6 +163,9 @@ if %ms% == 30 goto requirep
 if %ms% == 31 goto floodlastk
 if %ms% == 32 goto vedbex
 if %ms% == 33 goto mailbomb
+if %ms% == 34 goto sendleb
+if %ms% == 35 goto pingllip
+if %ms% == 36 goto pinglpip
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -179,6 +181,7 @@ echo Name: %log-name% - IP: %log-content% >>".\content\logs\%log-name%.txt"
 if not exist ".\content\logs\%log-name%.txt" echo [36mnewten/iplogger/error-$ [34mThere was an error creating your log
 if not exist ".\content\logs\%log-name%.txt" goto menu
 echo [36mnewten/iplogger/complete-$ [34mThe log %log-name% was created
+echo %log-content%>".\content\temp\llip_tmpf.txt"
 ping -n 1 %log-content% >nul
 if errorlevel == 1 echo [36mnewten/menu/iplogger/complete-$ [91mWARNING! New logged IP did not respond!
 goto menu
@@ -200,6 +203,7 @@ set /p ip= [36mnewten/pinger/ip-# [34m
 if not exist ".\content\animations\pinger.cmd" echo [36mnewten/pinger/error-$ [34mpinger.cmd is broken or missing
 if not exist ".\content\animations\pinger.cmd" goto menu
 start cmd /c ".\content\animations\pinger.cmd"
+echo %ip%>".\content\temp\lpip_tmpf.txt"
 echo [36mnewten/pinger/start-$ [34mNow pinging %ip%
 goto menu
 
@@ -274,6 +278,8 @@ echo [36mnewten/htbc-$ [34mHack the box no longer requires you to hack yoursel
 goto menu
 
 :1ping
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/iping-$ [91mNetwork Error! & goto menu
 set ip=1.1.1.1
 if not exist ".\content\animations\pinger.cmd" echo Pinger.cmd is missing or broken && goto menu
 start cmd /c ".\content\animations\pinger.cmd"
@@ -491,4 +497,27 @@ echo %send_num%>".\content\temp\mbsn_tmpf.txt"
 echo %message%>".\content\temp\mbmsg_tmpf.txt"
 echo %bombLoc%>".\content\temp\mbbl_tmpf.txt"
 start cmd /c ".\content\batches\mailbomber.cmd"
+goto menu
+
+:sendleb
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/mailbomb-$ [91mNetwork Error! & goto menu
+echo [36mnewten/menu/mailbomb-$ [34mBombing last email!
+start cmd /c ".\content\batches\mailbomber.cmd"
+goto menu
+
+:pingllip
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/pinger-$ [91mNetwork Error! & goto menu
+set /p ip=<".\content\temp\llip_tmpf.txt"
+echo [36mnewten/menu/pinger-$ [34mPinging [92m%ip%
+start cmd /c ".\content\animations\pinger.cmd"
+goto menu
+
+:pinglpip
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/pinger-$ [91mNetwork Error! & goto menu
+set /p ip=<".\content\temp\lpip_tmpf.txt"
+echo [36mnewten/menu/pinger-$ [34mPinging [92m%ip%
+start cmd /c ".\content\animations\pinger.cmd"
 goto menu
