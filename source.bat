@@ -141,7 +141,7 @@ echo [31m-[35m13[31m- [35m1.1.1.1 Pinger		[31m-[35m33[31m- [35mMail Bomb
 echo [31m-[35m14[31m- [35mPatch Notes		[31m-[35m34[31m- [35mResend Last Email Bomb
 echo [31m-[35m15[31m- [35mSource Code		[31m-[35m35[31m- [35mPing Last Logged IP
 echo [31m-[35m17[31m- [35mEncode to Base64		[31m-[35m36[31m- [35mPing Last Pinged IP
-echo [31m-[35m18[31m- [35mDecode from Base64
+echo [31m-[35m18[31m- [35mDecode from Base64		[31m-[35m37[31m- [35mGoogle Cloud Shell
 echo [31m-[35m19[31m- [35mFAQ
 echo [31m-[35m20[31m- [35mIP Look-up
 echo.
@@ -186,6 +186,7 @@ if %ms% == 33 goto mailbomb
 if %ms% == 34 goto sendleb
 if %ms% == 35 goto pingllip
 if %ms% == 36 goto pinglpip
+if %ms% == 37 goto ssh
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -540,4 +541,11 @@ if errorlevel == 1 echo [36mnewten/menu/pinger-$ [91mNetwork Error! & goto men
 set /p ip=<".\content\temp\lpip_tmpf.txt"
 echo [36mnewten/menu/pinger-$ [34mPinging [92m%ip%
 start cmd /c ".\content\animations\pinger.cmd"
+goto menu
+
+:ssh
+ping -n 1 www.google.com >nul
+if errorlevel == 1 echo [36mnewten/menu/gcs-$ [91mNetwork Error! & goto menu
+echo [36mnewten/menu/gcs-$ [34mStarting your default browser...
+start https://shell.cloud.google.com/
 goto menu
