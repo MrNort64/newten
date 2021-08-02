@@ -10,5 +10,10 @@
 
 -> Version 1.11.3
 
-- You can now ping thelast pinged and last logged IP
+- You can now ping the last pinged and last logged IP
 - You can now resend the last sent email bomb
+
+-> Version 1.12.5
+
+- You can now view your IP logs with a clean, polished list of the logs file directory
+- (BUG) Newten may crash when internet is unavailable
