@@ -86,6 +86,18 @@ echo     f.close()>>".\content\pies\updatepingtool.py"
 echo except:>>".\content\pies\updatepingtool.py"
 echo 	 os.system("echo [91mError interacting with pinger.cmd")>>".\content\pies\updatepingtool.py"
 
+echo import urllib.request>".\content\pies\intall-loglister.py"
+echo import os>>".\content\pies\intall-loglister.py"
+echo try:>>".\content\pies\intall-loglister.py"
+echo     updateURL = "https://raw.githubusercontent.com/MrNort64/newten/main/pies/loglister.py">>".\content\pies\intall-loglister.py"
+echo     sourceCodeGet = urllib.request.urlopen(updateURL)>>".\content\pies\intall-loglister.py"
+echo     sourceCode = sourceCodeGet.read()>>".\content\pies\intall-loglister.py"
+echo     f = open('./content/pies/loglister.py', 'w')>>".\content\pies\intall-loglister.py"
+echo     f.write(sourceCode.decode())>>".\content\pies\intall-loglister.py"
+echo     f.close()>>".\content\pies\intall-loglister.py"
+echo except:>>".\content\pies\intall-loglister.py"
+echo 	 os.system("echo [91mError interacting with loglister.py")>>".\content\pies\intall-loglister.py"
+
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 echo.
@@ -109,6 +121,8 @@ echo x=msgbox("A new update is available; use menu option 7 to install it",64,"N
 echo [92mRepolishong Newten from github...
 echo [92mVarifying Mailspam.py...
 .\content\pies\intallmailspam.py
+echo [92mVarifying Loglister.py...
+.\content\pies\intall-loglister.py
 echo [92mVarifying Pinger.cmd...
 .\content\pies\updatepingtool.py
 echo [92mDone!
@@ -142,7 +156,7 @@ echo [31m-[35m14[31m- [35mPatch Notes		[31m-[35m34[31m- [35mResend Last 
 echo [31m-[35m15[31m- [35mSource Code		[31m-[35m35[31m- [35mPing Last Logged IP
 echo [31m-[35m17[31m- [35mEncode to Base64		[31m-[35m36[31m- [35mPing Last Pinged IP
 echo [31m-[35m18[31m- [35mDecode from Base64		[31m-[35m37[31m- [35mGoogle Cloud Shell
-echo [31m-[35m19[31m- [35mFAQ
+echo [31m-[35m19[31m- [35mFAQ			[31m-[35m38[31m- [35mList IP Logs
 echo [31m-[35m20[31m- [35mIP Look-up
 echo.
 if not %version% == %legacy_version% echo [92mNew Update! [97m%legacy_version% [34mto [97m%version% & echo [92mUse Menu Option 7 to Update! & echo.
@@ -187,6 +201,7 @@ if %ms% == 34 goto sendleb
 if %ms% == 35 goto pingllip
 if %ms% == 36 goto pinglpip
 if %ms% == 37 goto ssh
+if %ms% == 38 goto listlogs
 echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
@@ -548,4 +563,9 @@ ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [36mnewten/menu/gcs-$ [91mNetwork Error! & goto menu
 echo [36mnewten/menu/gcs-$ [34mStarting your default browser...
 start https://shell.cloud.google.com/
+goto menu
+
+:listlogs
+echo [36mnewten/menu/ip_logs-$ [34mYour IP Logs[92m
+.\content\pies\loglister.py
 goto menu
