@@ -16,4 +16,4 @@
 -> Version 1.12.5
 
 - You can now view your IP logs with a clean, polished list of the logs file directory
-- (BUG) Newten may crash when internet is unavailable
+- (BUG) Newten may crash when internet is unavailable (FIXED)
