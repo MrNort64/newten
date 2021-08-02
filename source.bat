@@ -159,7 +159,6 @@ echo [31m-[35m18[31m- [35mDecode from Base64		[31m-[35m37[31m- [35mGoogl
 echo [31m-[35m19[31m- [35mFAQ			[31m-[35m38[31m- [35mList IP Logs
 echo [31m-[35m20[31m- [35mIP Look-up
 echo.
-if not %version% == %legacy_version% echo [92mNew Update! [97m%legacy_version% [34mto [97m%version% & echo [92mUse Menu Option 7 to Update! & echo.
 goto menu
 
 :menu
