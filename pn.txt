@@ -8,12 +8,11 @@
 - I spent 5 hours programming an email spam feature into the multi tool
 - Since batch couldnt add the mail spammer i needed to use a seperate file thats sends a pull request to github ._. have fun
 
--> Version 1.11.3
-
-- You can now ping the last pinged and last logged IP
-- You can now resend the last sent email bomb
-
 -> Version 1.12.5
 
 - You can now view your IP logs with a clean, polished list of the logs file directory
 - (BUG) Newten may crash when internet is unavailable (FIXED)
+
+-> Version 1.13.6
+
+- Cleaned up IP DOXXer, when doxxing and IP you will now be introduced to a clean template of information instead of an ugly json format
