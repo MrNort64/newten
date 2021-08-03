@@ -5,6 +5,7 @@ if not exist ".\content\batches" mkdir ".\content\batches"
 if not exist ".\content\info\mail_addr.txt" echo example@projectn.com>".\content\info\mail_addr.txt"
 if not exist ".\content\info\mail_pass.txt" echo Pa55w0rd>".\content\info\mail_pass.txt"
 if not exist ".\content\nodes" mkdir ".\content\nodes"
+if not exist ".\content\temp\dox.txt" echo 0>".\content\temp\dox.txt"
 
 echo npm install kahoot-spammer>".\content\batches\kahootpy.cmd"
 
@@ -98,6 +99,18 @@ echo     f.close()>>".\content\pies\intall-loglister.py"
 echo except:>>".\content\pies\intall-loglister.py"
 echo 	 os.system("echo [91mError interacting with loglister.py")>>".\content\pies\intall-loglister.py"
 
+echo import urllib.request>".\content\pies\installipdoxxer.py"
+echo import os>>".\content\pies\installipdoxxer.py"
+echo try:>>".\content\pies\installipdoxxer.py"
+echo     updateURL = "https://raw.githubusercontent.com/MrNort64/newten/main/pies/ipdoxxer.py">>".\content\pies\installipdoxxer.py"
+echo     sourceCodeGet = urllib.request.urlopen(updateURL)>>".\content\pies\installipdoxxer.py"
+echo     sourceCode = sourceCodeGet.read()>>".\content\pies\installipdoxxer.py"
+echo     f = open('./content/pies/ipdoxxer.py', 'w')>>".\content\pies\installipdoxxer.py"
+echo     f.write(sourceCode.decode())>>".\content\pies\installipdoxxer.py"
+echo     f.close()>>".\content\pies\installipdoxxer.py"
+echo except:>>".\content\pies\installipdoxxer.py"
+echo 	 os.system("echo [91mError interacting with Ipdoxxer.py")>>".\content\pies\installipdoxxer.py"
+
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 echo.
@@ -123,6 +136,8 @@ echo [92mVarifying Mailspam.py...
 .\content\pies\intallmailspam.py
 echo [92mVarifying Loglister.py...
 .\content\pies\intall-loglister.py
+echo [92mVarifying Ipdoxxer.py...
+.\content\pies\installipdoxxer.py
 echo [92mVarifying Pinger.cmd...
 .\content\pies\updatepingtool.py
 echo [92mDone!
@@ -370,8 +385,10 @@ goto menu
 ping -n 1 www.google.com >nul
 if errorlevel == 1 echo [36mnewten/menu/ip-lookup-$ [91mNetwork Error! & goto menu
 set /p ip=[36mnewten/menu/ip-lookup/ip-# [34m
+echo %ip%>".\content\temp\ltip_tmpf.txt"
 echo [36mnewten/menu/ip-lookup/response-$ [34mTraced Info.[92m
-curl http://ipinfo.io/%ip%/json
+.\content\pies\ipdoxxer.py
+type ".\content\temp\dox.txt"
 echo.
 goto menu
 
