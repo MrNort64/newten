@@ -111,6 +111,22 @@ echo     f.close()>>".\content\pies\installipdoxxer.py"
 echo except:>>".\content\pies\installipdoxxer.py"
 echo 	 os.system("echo [91mError interacting with Ipdoxxer.py")>>".\content\pies\installipdoxxer.py"
 
+echo import urllib.request>".\content\pies\installportscan.py"
+echo import os>>".\content\pies\installportscan.py"
+echo try:>>".\content\pies\installportscan.py"
+echo     updateURL = "https://raw.githubusercontent.com/MrNort64/newten/main/pies/portscan.py">>".\content\pies\installportscan.py"
+echo     sourceCodeGet = urllib.request.urlopen(updateURL)>>".\content\pies\installportscan.py"
+echo     sourceCode = sourceCodeGet.read()>>".\content\pies\installportscan.py"
+echo     f = open('./content/pies/portscan.py', 'w')>>".\content\pies\installportscan.py"
+echo     f.write(sourceCode.decode())>>".\content\pies\installportscan.py"
+echo     f.close()>>".\content\pies\installportscan.py"
+echo except:>>".\content\pies\installportscan.py"
+echo 	 os.system("echo [91mError interacting with portscan.py")>>".\content\pies\installportscan.py"
+
+if exist ".\content\exes\Port-Scanner.exe" del ".\content\exes\Port-Scanner.exe"
+if exist ".\content\exes\pScan.exe" del ".\content\exes\pScan.exe"
+if exist ".\content\exes" rmdir ".\content\exes"
+
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 echo.
@@ -138,6 +154,8 @@ echo [92mVarifying Loglister.py...
 .\content\pies\intall-loglister.py
 echo [92mVarifying Ipdoxxer.py...
 .\content\pies\installipdoxxer.py
+echo [92mVarifying Portscan.py...
+.\content\pies\installportscan.py
 echo [92mVarifying Pinger.cmd...
 .\content\pies\updatepingtool.py
 echo [92mDone!
