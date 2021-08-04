@@ -14,6 +14,12 @@ echo title Mail Spammer>>".\content\batches\mailbomber.cmd"
 echo .\content\pies\mailspam.py>>".\content\batches\mailbomber.cmd"
 echo pause>>".\content\batches\mailbomber.cmd"
 
+echo @echo off>".\content\batches\portscanpie.cmd"
+echo title Scanning Ports>>".\content\batches\portscanpie.cmd"
+echo .\content\pies\portscan.py>>".\content\batches\portscanpie.cmd"
+echo echo [92m>>".\content\batches\portscanpie.cmd"
+echo pause>>".\content\batches\portscanpie.cmd"
+
 echo import urllib.request>".\content\pies\intallmailspam.py"
 echo import os>>".\content\pies\intallmailspam.py"
 echo try:>>".\content\pies\intallmailspam.py"
