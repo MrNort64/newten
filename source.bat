@@ -277,7 +277,7 @@ goto menu
 
 :doxbin
 echo [36mnewten/menu/pscan-$ [34mStarting your default browser...
-start "https://doxbin.org/"
+start https://doxbin.org/
 goto menu
 
 :PortScanner
