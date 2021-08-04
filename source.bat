@@ -157,7 +157,7 @@ cls
 echo [31m-[35m1[31m- [35mIP Logger			[31m-[35m21[31m- [35mDiscord Chat Feed
 echo [31m-[35m2[31m- [35mIP Pinger			[31m-[35m22[31m- [35mTest Connection
 echo [31m-[35m3[31m- [35mLog View			[31m-[35m23[31m- [35mMail Sender
-echo [31m-[35m4[31m- [35mpScan			[31m-[35m24[31m- [35mSet Email Profile
+echo [31m-[35m4[31m- [35mDox Bin			[31m-[35m24[31m- [35mSet Email Profile
 echo [31m-[35m5[31m- [35mScan Ports			[31m-[35m25[31m- [35mView Mail Credidentials
 echo [31m-[35m6[31m- [35mClear			[31m-[35m26[31m- [35mCyber Hub
 echo [31m-[35m7[31m- [35mUpdate Newten		[31m-[35m27[31m- [35mDiagnose Newten
@@ -181,7 +181,7 @@ set /p ms= [36mnewten/menu-# [34m
 if %ms% == 1 goto ipLogger
 if %ms% == 2 goto pinger
 if %ms% == 3 goto logView
-if %ms% == 4 goto pScan
+if %ms% == 4 goto doxbin
 if %ms% == 5 goto PortScanner
 if %ms% == 6 goto clear
 if %ms% == 7 goto updater
@@ -257,12 +257,9 @@ echo %ip%>".\content\temp\lpip_tmpf.txt"
 echo [36mnewten/menu/pinger/start-$ [34mNow pinging %ip%
 goto menu
 
-:pScan
-echo [36mnewten/menu/pscan-$ [34mStarting pScan.exe...
-if not exist ".\content\exes\pScan.exe" echo [36mnewten/menu/pscan/error-$ [34mpScan.exe is broken or missing
-if not exist ".\content\exes\pScan.exe" goto menu
-start /d ".\content\exes" pScan.exe >nul
-echo [36mnewten/menu/pscan-$ [34mpScan.exe was started
+:doxbin
+echo [36mnewten/menu/pscan-$ [34mStarting your default browser...
+start "https://doxbin.org/"
 goto menu
 
 :PortScanner
