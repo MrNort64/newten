@@ -158,7 +158,7 @@ echo [31m-[35m1[31m- [35mIP Logger			[31m-[35m21[31m- [35mDiscord Chat F
 echo [31m-[35m2[31m- [35mIP Pinger			[31m-[35m22[31m- [35mTest Connection
 echo [31m-[35m3[31m- [35mLog View			[31m-[35m23[31m- [35mMail Sender
 echo [31m-[35m4[31m- [35mpScan			[31m-[35m24[31m- [35mSet Email Profile
-echo [31m-[35m5[31m- [35mPort Scanner		[31m-[35m25[31m- [35mView Mail Credidentials
+echo [31m-[35m5[31m- [35mScan Ports			[31m-[35m25[31m- [35mView Mail Credidentials
 echo [31m-[35m6[31m- [35mClear			[31m-[35m26[31m- [35mCyber Hub
 echo [31m-[35m7[31m- [35mUpdate Newten		[31m-[35m27[31m- [35mDiagnose Newten
 echo [31m-[35m8[31m- [35mExit			[31m-[35m28[31m- [35mKahoot Flooder
@@ -220,57 +220,54 @@ echo [36mnewten/menu/error-$ [34m%ms% is not a valid menu option
 goto menu
 
 :ipLogger
-if not exist ".\content\logs" mkdir ".\content\logs" & echo [36mnewten/iplogger-$ [92mLogs folder created because it was [91mmissing
-echo [36mnewten/iplogger-$ [34mEnter the log name
+if not exist ".\content\logs" mkdir ".\content\logs" & echo [36mnewten/menu/iplogger-$ [92mLogs folder created because it was [91mmissing
+echo [36mnewten/menu/iplogger-$ [34mEnter the log name
 set /p log-name= [36mnewten/iplogger/name-# [34m
-if exist ".\content\logs\%log-name%.txt" echo [36mnewten/iplogger/error-$ [34mThere is already a log with that name
+if exist ".\content\logs\%log-name%.txt" echo [36mnewten/menu/iplogger/error-$ [34mThere is already a log with that name
 if exist ".\content\logs\%log-name%.txt" goto menu
-echo [36mnewten/iplogger-$ [34mEnter the IP you are logging
-set /p log-content= [36mnewten/iplogger/content-# [34m
+echo [36mnewten/menu/iplogger-$ [34mEnter the IP you are logging
+set /p log-content= [36mnewten/menu/iplogger/content-# [34m
 echo Name: %log-name% - IP: %log-content% >>".\content\logs\%log-name%.txt"
-if not exist ".\content\logs\%log-name%.txt" echo [36mnewten/iplogger/error-$ [34mThere was an error creating your log
+if not exist ".\content\logs\%log-name%.txt" echo [36mnewten/menu/iplogger/error-$ [34mThere was an error creating your log
 if not exist ".\content\logs\%log-name%.txt" goto menu
-echo [36mnewten/iplogger/complete-$ [34mThe log %log-name% was created
+echo [36mnewten/menu/iplogger/complete-$ [34mThe log %log-name% was created
 echo %log-content%>".\content\temp\llip_tmpf.txt"
 ping -n 1 %log-content% >nul
 if errorlevel == 1 echo [36mnewten/menu/iplogger/complete-$ [91mWARNING! New logged IP did not respond!
 goto menu
 
 :logView 
-echo [36mnewten/logview-$ [34mEnter the name of the log you want to view
-set /p vlog-name= [36mnewten/logview/log-# [34m
-if not exist ".\content\logs\%vlog-name%.txt" echo [36mnewten/logview/error-$ [34mThere is no log with the name of %vlog-name%
+echo [36mnewten/menu/logview-$ [34mEnter the name of the log you want to view
+set /p vlog-name= [36mnewten/menu/logview/log-# [34m
+if not exist ".\content\logs\%vlog-name%.txt" echo [36mnewten/menu/logview/error-$ [34mThere is no log with the name of %vlog-name%
 if not exist ".\content\logs\%vlog-name%.txt" goto menu
 set /p log-data=<".\content\logs\%vlog-name%.txt"
-echo [36mnewten/logview/logdata$ [34m%log-data%
+echo [36mnewten/menu/logview/logdata$ [34m%log-data%
 goto menu
 
 :pinger
 ping -n 1 www.google.com >nul
-if errorlevel == 1 echo [36mnewten/pinger-$ [91mNetwork Error! & goto menu
-echo [36mnewten/pinger-$ [34mEnter the IP you want to ping
-set /p ip= [36mnewten/pinger/ip-# [34m
-if not exist ".\content\animations\pinger.cmd" echo [36mnewten/pinger/error-$ [34mpinger.cmd is broken or missing
+if errorlevel == 1 echo [36mnewten/menu/pinger-$ [91mNetwork Error! & goto menu
+echo [36mnewten/menu/pinger-$ [34mEnter the IP you want to ping
+set /p ip= [36mnewten/menu/pinger/ip-# [34m
+if not exist ".\content\animations\pinger.cmd" echo [36mnewten/menu/pinger/error-$ [34mpinger.cmd is broken or missing
 if not exist ".\content\animations\pinger.cmd" goto menu
 start cmd /c ".\content\animations\pinger.cmd"
 echo %ip%>".\content\temp\lpip_tmpf.txt"
-echo [36mnewten/pinger/start-$ [34mNow pinging %ip%
+echo [36mnewten/menu/pinger/start-$ [34mNow pinging %ip%
 goto menu
 
 :pScan
-echo [36mnewten/pscan-$ [34mStarting pScan.exe
-if not exist ".\content\exes\pScan.exe" echo [36mnewten/pscan/error-$ [34mpScan.exe is broken or missing
+echo [36mnewten/menu/pscan-$ [34mStarting pScan.exe...
+if not exist ".\content\exes\pScan.exe" echo [36mnewten/menu/pscan/error-$ [34mpScan.exe is broken or missing
 if not exist ".\content\exes\pScan.exe" goto menu
 start /d ".\content\exes" pScan.exe >nul
-echo [36mnewten/pscan-$ [34mpScan.exe was started
+echo [36mnewten/menu/pscan-$ [34mpScan.exe was started
 goto menu
 
 :PortScanner
-echo [36mnewten/portscanner-$ [34mStarting Port-Scanner.exe
-if not exist ".\content\exes\Port-Scanner.exe" echo [36mnewten/portscanner/error-$ [34mPort-Scanner.exe is broken or missing
-if not exist ".\content\exes\Port-Scanner.exe" goto menu
-start /d ".\content\exes" Port-Scanner.exe >nul
-echo [36mnewten/portscanner-$ [34mPort-Scanner.exe was started
+echo [36mnewten/menu/pscan-$ [34mStarting portscan.py...
+start cmd /c ".\content\batches\portscanpie.cmd"
 goto menu
 
 :clear
@@ -278,24 +275,24 @@ cls
 goto greeting
 
 :updater
-echo [36mnewten/updater-$ [34mStarting con-test.bat
-if not exist ".\updater\con-test.bat" echo [36mnewten/updater/error-$ [34mcon-test.bat is broken or missing
+echo [36mnewten/menu/updater-$ [34mStarting con-test.bat
+if not exist ".\updater\con-test.bat" echo [36mnewten/menu/updater/error-$ [34mcon-test.bat is broken or missing
 if not exist ".\updater\con-test.bat" goto menu
 .\content\pies\version.py
 set /p nVersion=<".\content\info\version.txt"
 echo %nVersion%>".\content\info\legacy_version.txt"
 .\updater\con-test.bat
-echo [36mnewten/updater/complete-$ [34mUpdate Installed
+echo [36mnewten/menu/updater/complete-$ [34mUpdate Installed
 goto menu
 
 :logDelete
-echo [36mnewten/logdelete-$ [34mEnter the log name you want to delete
-set /p dlog-name= [36mnewten/logdelete/log-# [34m
+echo [36mnewten/menu/logdelete-$ [34mEnter the log name you want to delete
+set /p dlog-name= [36mnewten/menu/logdelete/log-# [34m
 if not exist ".\content\logs\%dlog-name%.txt" echo [36mnewten/logdelete/error-$ [34mA log with the name %dlog-name% does not exist
 if not exist ".\content\logs\%dlog-name%.txt" goto menu
 echo [36mnewten/logdelete/start-$ [34mDeleting %dlog-name%.txt
 del ".\content\logs\%dlog-name%.txt"
-echo [36mnewten/logdelete/done-$ [34mLog %dlog-name%.txt was deleted
+echo [36mnewten/menu/logdelete/done-$ [34mLog %dlog-name%.txt was deleted
 goto menu
 
 :discord
