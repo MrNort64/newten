@@ -16,3 +16,4 @@
 -> Version 1.13.6
 
 - Cleaned up IP DOXXer, when doxxing and IP you will now be introduced to a clean template of information instead of an ugly json format
+- Aside from the website links Newten is now 100% created by me, Port-Scanner.exe and pScan.exe were both replaced with a custom open source portscanner I developed
