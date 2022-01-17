@@ -282,8 +282,7 @@ echo [36mnewten/menu/pinger/start-$ [34mNow pinging %ip%
 goto menu
 
 :doxbin
-echo [36mnewten/menu/pscan-$ [34mStarting your default browser...
-start https://doxbin.org/
+echo [36mnewten/menu/doxbin-$ [91mDoxbin services were shutdown in 2021!
 goto menu
 
 :PortScanner
@@ -480,8 +479,6 @@ if not exist ".\content\animations" echo [36mnewten/menu/diagnose-$ [91mFile l
 if exist ".\content\animations" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/animations/ =- & set /a x=%x%+1
 if not exist ".\content\batches" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/batches/ =- & set /a z=%z%+1
 if exist ".\content\batches" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/batches/ =- & set /a x=%x%+1
-if not exist ".\content\exes" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/exes/ =- & set /a z=%z%+1
-if exist ".\content\exes" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/exes/ =- & set /a x=%x%+1
 if not exist ".\content\info" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/info/ =- & set /a z=%z%+1
 if exist ".\content\info" echo [36mnewten/menu/diagnose-$ [92mFile Confirmed! -= newten/content/info/ =- & set /a x=%x%+1
 if not exist ".\content\logs" echo [36mnewten/menu/diagnose-$ [91mFile lost! -= newten/content/logs/ =- & set /a z=%z%+1
