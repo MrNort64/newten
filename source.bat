@@ -133,6 +133,8 @@ if exist ".\content\exes\Port-Scanner.exe" del ".\content\exes\Port-Scanner.exe"
 if exist ".\content\exes\pScan.exe" del ".\content\exes\pScan.exe"
 if exist ".\content\exes" rmdir ".\content\exes"
 
+if exist ".\Newten.bat.bak" del ".\Newten.bat.bak"
+
 title Verifying MultiCloud
 echo [32m-} Powered By MultiCloud {-
 echo.
@@ -193,9 +195,10 @@ echo [31m-[35m12[31m- [35mHack The Box Code		[31m-[35m32[31m- [35mVedbex
 echo [31m-[35m13[31m- [35m1.1.1.1 Pinger		[31m-[35m33[31m- [35mMail Bomber
 echo [31m-[35m14[31m- [35mPatch Notes		[31m-[35m34[31m- [35mResend Last Email Bomb
 echo [31m-[35m15[31m- [35mSource Code		[31m-[35m35[31m- [35mPing Last Logged IP
-echo [31m-[35m17[31m- [35mEncode to Base64		[31m-[35m36[31m- [35mPing Last Pinged IP
-echo [31m-[35m18[31m- [35mDecode from Base64		[31m-[35m37[31m- [35mGoogle Cloud Shell
-echo [31m-[35m19[31m- [35mFAQ			[31m-[35m38[31m- [35mList IP Logs
+echo [31m-[35m16[31m- [35mOpen Source Code		[31m-[35m36[31m- [35mPing Last Pinged IP
+echo [31m-[35m17[31m- [35mEncode to Base64		[31m-[35m37[31m- [35mGoogle Cloud Shell
+echo [31m-[35m18[31m- [35mDecode from Base64		[31m-[35m38[31m- [35mList IP Logs
+echo [31m-[35m19[31m- [35mFAQ			
 echo [31m-[35m20[31m- [35mIP Look-up
 echo.
 goto menu
